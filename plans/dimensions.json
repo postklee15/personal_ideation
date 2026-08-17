@@ -1,0 +1,27 @@
+{
+  "complex": "성수동 트리마제",
+  "type": "38A / 84A",
+  "exclusive_m2": 84.82,
+  "supply_m2": 126.66,
+  "units_this_type": 97,
+  "occupancy": "2017-05-29",
+  "basis": "현장 실측 없음. 전용면적 + 첨부 38A 평면도 비율 환산.",
+  "exclusive_sum_scaled_m2": 81.44000000000001,
+  "unit": "mm",
+  "room3": {
+    "width": 2900,
+    "depth": 3200,
+    "door": 800
+  },
+  "closet_asis": {
+    "width": 2000,
+    "depth": 700
+  },
+  "walkthrough_dressing": {
+    "zone_depth": 1500,
+    "passage_width": 900,
+    "hanger_depth": 600,
+    "partition": 100,
+    "bedroom_remaining_depth": 1700
+  }
+}

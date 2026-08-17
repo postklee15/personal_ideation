@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1480" viewBox="0 0 1680 1480">
+  <defs>
+    <style>
+      text { font-family: "Noto Sans KR", "IBM Plex Sans KR", "Apple SD Gothic Neo", sans-serif; }
+    </style>
+    <marker id="arrowG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1F7A4D"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#F7F4EE"/>
+  <text x="56" y="48" font-size="26" font-weight="800" fill="#1A1A1A">트리마제 38A · 방3 통로형 드레스룸</text>
+  <text x="56" y="74" font-size="13" fill="#5C5C5C">성수동 트리마제  ·  전용 84.82㎡  /  공급 126.66㎡  ·  방3 화2  ·  84A 97세대</text>
+  <text x="56" y="96" font-size="12" fill="#C0392B">치수 mm 는 평면도 스케일 환산값 (현장 실측 아님). 시공 전 해당 세대 실측 필수.</text>
+  
+    <g transform="translate(56,150)">
+      <rect x="-24" y="-56" width="1433" height="1036" rx="16" fill="#FFFFFF" stroke="#D8D2C8" stroke-width="1.5"/>
+      <rect x="-24" y="-56" width="8" height="1036" rx="4" fill="#8A7A68"/>
+      <text x="8" y="-28" font-size="18" font-weight="700" fill="#1A1A1A">기존 평면  38A</text>
+      <rect x="1293" y="-48" width="100" height="24" rx="12" fill="#8A7A68"/>
+      <text x="1343" y="-31" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">AS-IS</text>
+      <rect x="0" y="0" width="1353" height="946" fill="#F7F4EE" stroke="#2B2B2B" stroke-width="4" />
+<rect x="22" y="22" width="682" height="352" fill="#E8D5B0" stroke="none" />
+<text x="418" y="99" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="600" >방1</text>
+<rect x="330" y="121" width="242" height="198" fill="#F3E6CF" stroke="#8A7A68" stroke-width="1" rx="4"/>
+<rect x="334.4" y="125.4" width="233.2" height="17.6" fill="#EFE7DC" stroke="#8A7A68" stroke-width="0.8" />
+<rect x="22" y="154" width="198" height="220" fill="#A8CADC" stroke="#2B2B2B" stroke-width="2" />
+<text x="121" y="184.8" font-size="11" fill="#5C5C5C" text-anchor="middle" font-weight="600" >안방욕실</text>
+<rect x="44" y="209" width="55" height="77" fill="#D8E8EE" stroke="#6A8FA3" stroke-width="1" />
+<rect x="121" y="308" width="77" height="44" fill="#CEE0E8" stroke="#6A8FA3" stroke-width="1" />
+<line x1="220" y1="176" x2="143" y2="176" stroke="#6B5A4A" stroke-width="2" />
+<path d="M 143 176 A 77 77 0 0 0 220 253" fill="none" stroke="#6B5A4A" stroke-width="1.2"/>
+<rect x="726" y="22" width="220" height="242" fill="#8FB8C9" stroke="#2B2B2B" stroke-width="2" />
+<text x="836" y="52.8" font-size="13" fill="#1A1A1A" text-anchor="middle" font-weight="600" >욕실</text>
+<rect x="748" y="77" width="55" height="77" fill="#D8E8EE" stroke="#6A8FA3" stroke-width="1" />
+<rect x="847" y="187" width="77" height="55" fill="#CEE0E8" stroke="#6A8FA3" stroke-width="1" />
+<line x1="748" y1="264" x2="825" y2="264" stroke="#6B5A4A" stroke-width="2" />
+<path d="M 825 264 A 77 77 0 0 0 748 187" fill="none" stroke="#6B5A4A" stroke-width="1.2"/>
+<rect x="968" y="22" width="286" height="242" fill="#F4F4F4" stroke="none" />
+<rect x="968" y="22" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1012" y="22" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1056" y="22" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1100" y="22" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1144" y="22" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1188" y="22" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1232" y="22" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="990" y="44" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1034" y="44" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1078" y="44" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1122" y="44" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1166" y="44" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1210" y="44" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="968" y="66" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1012" y="66" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1056" y="66" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1100" y="66" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1144" y="66" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1188" y="66" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1232" y="66" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="990" y="88" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1034" y="88" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1078" y="88" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1122" y="88" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1166" y="88" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1210" y="88" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="968" y="110" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1012" y="110" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1056" y="110" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1100" y="110" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1144" y="110" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1188" y="110" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1232" y="110" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="990" y="132" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1034" y="132" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1078" y="132" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1122" y="132" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1166" y="132" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1210" y="132" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="968" y="154" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1012" y="154" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1056" y="154" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1100" y="154" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1144" y="154" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1188" y="154" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1232" y="154" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="990" y="176" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1034" y="176" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1078" y="176" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1122" y="176" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1166" y="176" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1210" y="176" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="968" y="198" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1012" y="198" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1056" y="198" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1100" y="198" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1144" y="198" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1188" y="198" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1232" y="198" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="990" y="220" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1034" y="220" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1078" y="220" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1122" y="220" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1166" y="220" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1210" y="220" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="968" y="242" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1012" y="242" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1056" y="242" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1100" y="242" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1144" y="242" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1188" y="242" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1232" y="242" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1166" y="44" width="66" height="198" fill="#FFFFFF" stroke="#4A4A4A" stroke-width="1.2" />
+<text x="1078" y="66" font-size="13" fill="#1A1A1A" text-anchor="middle" font-weight="600" >현관</text>
+<rect x="968" y="286" width="286" height="242" fill="#EFE8DC" stroke="none" />
+<text x="1111" y="330" font-size="12" fill="#5C5C5C" text-anchor="middle" font-weight="500" >복도</text>
+<rect x="22" y="396" width="704" height="506" fill="#C9A36A" stroke="none" />
+<line x1="22" y1="396" x2="726" y2="396" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="415.8" x2="726" y2="415.8" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="435.6" x2="726" y2="435.6" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="455.4" x2="726" y2="455.4" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="475.2" x2="726" y2="475.2" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="495" x2="726" y2="495" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="514.8" x2="726" y2="514.8" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="534.6" x2="726" y2="534.6" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="554.4" x2="726" y2="554.4" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="574.2" x2="726" y2="574.2" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="594" x2="726" y2="594" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="613.8" x2="726" y2="613.8" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="633.6" x2="726" y2="633.6" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="653.4" x2="726" y2="653.4" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="673.2" x2="726" y2="673.2" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="693" x2="726" y2="693" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="712.8" x2="726" y2="712.8" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="732.6" x2="726" y2="732.6" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="752.4" x2="726" y2="752.4" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="772.2" x2="726" y2="772.2" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="792" x2="726" y2="792" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="811.8" x2="726" y2="811.8" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="831.6" x2="726" y2="831.6" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="851.4" x2="726" y2="851.4" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="871.2" x2="726" y2="871.2" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="891" x2="726" y2="891" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<text x="220" y="451" font-size="18" fill="#1A1A1A" text-anchor="middle" font-weight="600" >거실</text>
+<rect x="66" y="495" width="242" height="99" fill="#7A8B6F" stroke="none" rx="8" opacity="0.85"/>
+<rect x="121" y="616" width="121" height="66" fill="#E8D8B8" stroke="#8A7A68" stroke-width="1" />
+<rect x="418" y="704" width="286" height="66" fill="#D9D3C7" stroke="#4A4A4A" stroke-width="1.2" />
+<rect x="638" y="572" width="66" height="198" fill="#D9D3C7" stroke="#4A4A4A" stroke-width="1.2" />
+<text x="550" y="671" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="600" >주방</text>
+<rect x="440" y="792" width="154" height="88" fill="#EFE6D4" stroke="#8A7A68" stroke-width="1" />
+<rect x="748" y="550" width="242" height="352" fill="#E8D5B0" stroke="#2B2B2B" stroke-width="2" />
+<text x="869" y="594" font-size="15" fill="#1A1A1A" text-anchor="middle" font-weight="600" >방2</text>
+<rect x="786.5" y="649" width="165" height="220" fill="#F3E6CF" stroke="#8A7A68" stroke-width="1" rx="4"/>
+<rect x="790.9" y="653.4" width="156.2" height="17.6" fill="#EFE7DC" stroke="#8A7A68" stroke-width="0.8" />
+<line x1="770" y1="550" x2="858" y2="550" stroke="#6B5A4A" stroke-width="2" />
+<path d="M 858 550 A 88 88 0 0 1 770 638" fill="none" stroke="#6B5A4A" stroke-width="1.2"/>
+<rect x="792" y="906.4" width="154" height="8.8" fill="#D6E6EE" stroke="#6A8FA3" stroke-width="1.4" /><line x1="792" y1="910.8" x2="946" y2="910.8" stroke="#6A8FA3" stroke-width="1" />
+<rect x="110" y="906.4" width="308" height="8.8" fill="#D6E6EE" stroke="#6A8FA3" stroke-width="1.4" /><line x1="110" y1="910.8" x2="418" y2="910.8" stroke="#6A8FA3" stroke-width="1" />
+<rect x="264" y="17.6" width="264" height="8.8" fill="#D6E6EE" stroke="#6A8FA3" stroke-width="1.4" /><line x1="264" y1="22" x2="528" y2="22" stroke="#6A8FA3" stroke-width="1" />
+<rect x="1012" y="550" width="319" height="352" fill="#E8D5B0" stroke="#2B2B2B" stroke-width="2.4" />
+<text x="1133" y="726" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="600" >방3</text>
+<rect x="1056" y="704" width="176" height="165" fill="#F3E6CF" stroke="#8A7A68" stroke-width="1" rx="4"/>
+<rect x="1060.4" y="708.4" width="167.2" height="17.6" fill="#EFE7DC" stroke="#8A7A68" stroke-width="0.8" />
+<rect x="1111" y="550" width="220" height="77" fill="#FFFFFF" stroke="#4A4A4A" stroke-width="1.4" />
+<line x1="1166" y1="550" x2="1166" y2="627" stroke="#D8D2C8" stroke-width="1" />
+<line x1="1221" y1="550" x2="1221" y2="627" stroke="#D8D2C8" stroke-width="1" />
+<line x1="1276" y1="550" x2="1276" y2="627" stroke="#D8D2C8" stroke-width="1" />
+<text x="1221" y="592.9" font-size="12" fill="#5C5C5C" text-anchor="middle" font-weight="600" >옷장</text>
+<line x1="1012" y1="550" x2="1100" y2="550" stroke="#6B5A4A" stroke-width="2" />
+<path d="M 1100 550 A 88 88 0 0 1 1012 638" fill="none" stroke="#6B5A4A" stroke-width="1.2"/>
+<rect x="1067" y="906.4" width="198" height="8.8" fill="#D6E6EE" stroke="#6A8FA3" stroke-width="1.4" /><line x1="1067" y1="910.8" x2="1265" y2="910.8" stroke="#6A8FA3" stroke-width="1" />
+<rect x="0" y="0" width="1353" height="946" fill="none" stroke="#2B2B2B" stroke-width="5" />
+<rect x="22" y="374" width="704" height="22" fill="#2B2B2B" stroke="none" />
+<rect x="704" y="22" width="22" height="352" fill="#2B2B2B" stroke="none" />
+<rect x="946" y="22" width="22" height="264" fill="#2B2B2B" stroke="none" />
+<rect x="726" y="550" width="22" height="352" fill="#2B2B2B" stroke="none" />
+<rect x="990" y="550" width="22" height="352" fill="#2B2B2B" stroke="none" />
+<rect x="748" y="528" width="583" height="22" fill="#2B2B2B" stroke="none" />
+<rect x="726" y="396" width="22" height="154" fill="#2B2B2B" stroke="none" />
+    </g>
+  
+    <g transform="translate(860,150)">
+      <rect x="-24" y="-56" width="1433" height="1036" rx="16" fill="#FFFFFF" stroke="#D8D2C8" stroke-width="1.5"/>
+      <rect x="-24" y="-56" width="8" height="1036" rx="4" fill="#1F7A4D"/>
+      <text x="8" y="-28" font-size="18" font-weight="700" fill="#1A1A1A">변경 평면  방3 통로형 드레스룸</text>
+      <rect x="1293" y="-48" width="100" height="24" rx="12" fill="#1F7A4D"/>
+      <text x="1343" y="-31" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">TO-BE</text>
+      <rect x="0" y="0" width="1353" height="946" fill="#F7F4EE" stroke="#2B2B2B" stroke-width="4" />
+<rect x="22" y="22" width="682" height="352" fill="#E8D5B0" stroke="none" />
+<text x="418" y="99" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="600" >방1</text>
+<rect x="330" y="121" width="242" height="198" fill="#F3E6CF" stroke="#8A7A68" stroke-width="1" rx="4"/>
+<rect x="334.4" y="125.4" width="233.2" height="17.6" fill="#EFE7DC" stroke="#8A7A68" stroke-width="0.8" />
+<rect x="22" y="154" width="198" height="220" fill="#A8CADC" stroke="#2B2B2B" stroke-width="2" />
+<text x="121" y="184.8" font-size="11" fill="#5C5C5C" text-anchor="middle" font-weight="600" >안방욕실</text>
+<rect x="44" y="209" width="55" height="77" fill="#D8E8EE" stroke="#6A8FA3" stroke-width="1" />
+<rect x="121" y="308" width="77" height="44" fill="#CEE0E8" stroke="#6A8FA3" stroke-width="1" />
+<line x1="220" y1="176" x2="143" y2="176" stroke="#6B5A4A" stroke-width="2" />
+<path d="M 143 176 A 77 77 0 0 0 220 253" fill="none" stroke="#6B5A4A" stroke-width="1.2"/>
+<rect x="726" y="22" width="220" height="242" fill="#8FB8C9" stroke="#2B2B2B" stroke-width="2" />
+<text x="836" y="52.8" font-size="13" fill="#1A1A1A" text-anchor="middle" font-weight="600" >욕실</text>
+<rect x="748" y="77" width="55" height="77" fill="#D8E8EE" stroke="#6A8FA3" stroke-width="1" />
+<rect x="847" y="187" width="77" height="55" fill="#CEE0E8" stroke="#6A8FA3" stroke-width="1" />
+<line x1="748" y1="264" x2="825" y2="264" stroke="#6B5A4A" stroke-width="2" />
+<path d="M 825 264 A 77 77 0 0 0 748 187" fill="none" stroke="#6B5A4A" stroke-width="1.2"/>
+<rect x="968" y="22" width="286" height="242" fill="#F4F4F4" stroke="none" />
+<rect x="968" y="22" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1012" y="22" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1056" y="22" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1100" y="22" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1144" y="22" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1188" y="22" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1232" y="22" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="990" y="44" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1034" y="44" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1078" y="44" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1122" y="44" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1166" y="44" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1210" y="44" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="968" y="66" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1012" y="66" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1056" y="66" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1100" y="66" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1144" y="66" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1188" y="66" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1232" y="66" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="990" y="88" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1034" y="88" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1078" y="88" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1122" y="88" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1166" y="88" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1210" y="88" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="968" y="110" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1012" y="110" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1056" y="110" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1100" y="110" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1144" y="110" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1188" y="110" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1232" y="110" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="990" y="132" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1034" y="132" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1078" y="132" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1122" y="132" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1166" y="132" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1210" y="132" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="968" y="154" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1012" y="154" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1056" y="154" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1100" y="154" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1144" y="154" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1188" y="154" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1232" y="154" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="990" y="176" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1034" y="176" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1078" y="176" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1122" y="176" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1166" y="176" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1210" y="176" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="968" y="198" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1012" y="198" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1056" y="198" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1100" y="198" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1144" y="198" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1188" y="198" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1232" y="198" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="990" y="220" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1034" y="220" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1078" y="220" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1122" y="220" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1166" y="220" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1210" y="220" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="968" y="242" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1012" y="242" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1056" y="242" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1100" y="242" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1144" y="242" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1188" y="242" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1232" y="242" width="22" height="22" fill="#B8B8B8" stroke="none" />
+<rect x="1166" y="44" width="66" height="198" fill="#FFFFFF" stroke="#4A4A4A" stroke-width="1.2" />
+<text x="1078" y="66" font-size="13" fill="#1A1A1A" text-anchor="middle" font-weight="600" >현관</text>
+<rect x="968" y="286" width="286" height="242" fill="#EFE8DC" stroke="none" />
+<text x="1111" y="330" font-size="12" fill="#5C5C5C" text-anchor="middle" font-weight="500" >복도</text>
+<rect x="22" y="396" width="704" height="506" fill="#C9A36A" stroke="none" />
+<line x1="22" y1="396" x2="726" y2="396" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="415.8" x2="726" y2="415.8" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="435.6" x2="726" y2="435.6" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="455.4" x2="726" y2="455.4" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="475.2" x2="726" y2="475.2" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="495" x2="726" y2="495" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="514.8" x2="726" y2="514.8" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="534.6" x2="726" y2="534.6" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="554.4" x2="726" y2="554.4" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="574.2" x2="726" y2="574.2" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="594" x2="726" y2="594" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="613.8" x2="726" y2="613.8" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="633.6" x2="726" y2="633.6" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="653.4" x2="726" y2="653.4" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="673.2" x2="726" y2="673.2" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="693" x2="726" y2="693" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="712.8" x2="726" y2="712.8" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="732.6" x2="726" y2="732.6" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="752.4" x2="726" y2="752.4" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="772.2" x2="726" y2="772.2" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="792" x2="726" y2="792" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="811.8" x2="726" y2="811.8" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="831.6" x2="726" y2="831.6" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="851.4" x2="726" y2="851.4" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="871.2" x2="726" y2="871.2" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<line x1="22" y1="891" x2="726" y2="891" stroke="#B89058" stroke-width="0.6" opacity="0.45"/>
+<text x="220" y="451" font-size="18" fill="#1A1A1A" text-anchor="middle" font-weight="600" >거실</text>
+<rect x="66" y="495" width="242" height="99" fill="#7A8B6F" stroke="none" rx="8" opacity="0.85"/>
+<rect x="121" y="616" width="121" height="66" fill="#E8D8B8" stroke="#8A7A68" stroke-width="1" />
+<rect x="418" y="704" width="286" height="66" fill="#D9D3C7" stroke="#4A4A4A" stroke-width="1.2" />
+<rect x="638" y="572" width="66" height="198" fill="#D9D3C7" stroke="#4A4A4A" stroke-width="1.2" />
+<text x="550" y="671" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="600" >주방</text>
+<rect x="440" y="792" width="154" height="88" fill="#EFE6D4" stroke="#8A7A68" stroke-width="1" />
+<rect x="748" y="550" width="242" height="352" fill="#E8D5B0" stroke="#2B2B2B" stroke-width="2" />
+<text x="869" y="594" font-size="15" fill="#1A1A1A" text-anchor="middle" font-weight="600" >방2</text>
+<rect x="786.5" y="649" width="165" height="220" fill="#F3E6CF" stroke="#8A7A68" stroke-width="1" rx="4"/>
+<rect x="790.9" y="653.4" width="156.2" height="17.6" fill="#EFE7DC" stroke="#8A7A68" stroke-width="0.8" />
+<line x1="770" y1="550" x2="858" y2="550" stroke="#6B5A4A" stroke-width="2" />
+<path d="M 858 550 A 88 88 0 0 1 770 638" fill="none" stroke="#6B5A4A" stroke-width="1.2"/>
+<rect x="792" y="906.4" width="154" height="8.8" fill="#D6E6EE" stroke="#6A8FA3" stroke-width="1.4" /><line x1="792" y1="910.8" x2="946" y2="910.8" stroke="#6A8FA3" stroke-width="1" />
+<rect x="110" y="906.4" width="308" height="8.8" fill="#D6E6EE" stroke="#6A8FA3" stroke-width="1.4" /><line x1="110" y1="910.8" x2="418" y2="910.8" stroke="#6A8FA3" stroke-width="1" />
+<rect x="264" y="17.6" width="264" height="8.8" fill="#D6E6EE" stroke="#6A8FA3" stroke-width="1.4" /><line x1="264" y1="22" x2="528" y2="22" stroke="#6A8FA3" stroke-width="1" />
+<rect x="1012" y="550" width="319" height="352" fill="#E8D5B0" stroke="#2B2B2B" stroke-width="2.4" />
+<rect x="1012" y="550" width="319" height="165" fill="#E4C9B6" stroke="#1F7A4D" stroke-width="2" />
+<rect x="1012" y="550" width="99" height="165" fill="#F6EDE4" stroke="#1F7A4D" stroke-width="1.2" />
+<rect x="1111" y="550" width="220" height="66" fill="#F7F1EA" stroke="#1F7A4D" stroke-width="1.6" />
+<line x1="1119.8" y1="569.8" x2="1322.2" y2="569.8" stroke="#8A7A68" stroke-width="2" />
+<ellipse cx="1133" cy="580.8" rx="7" ry="18" fill="none" stroke="#8A7A68" stroke-width="1.2"/>
+<ellipse cx="1191.67" cy="580.8" rx="7" ry="18" fill="none" stroke="#8A7A68" stroke-width="1.2"/>
+<ellipse cx="1250.33" cy="580.8" rx="7" ry="18" fill="none" stroke="#8A7A68" stroke-width="1.2"/>
+<ellipse cx="1309" cy="580.8" rx="7" ry="18" fill="none" stroke="#8A7A68" stroke-width="1.2"/>
+<line x1="1115.4" y1="598.4" x2="1326.6" y2="598.4" stroke="#D8D2C8" stroke-width="1" />
+<text x="1221" y="591.8" font-size="11" fill="#1F7A4D" text-anchor="middle" font-weight="700" >상부 행거 600</text>
+<rect x="1265" y="616" width="66" height="99" fill="#F7F1EA" stroke="#1F7A4D" stroke-width="1.6" />
+<line x1="1273.8" y1="635.8" x2="1322.2" y2="635.8" stroke="#8A7A68" stroke-width="2" />
+<ellipse cx="1287" cy="646.8" rx="7" ry="18" fill="none" stroke="#8A7A68" stroke-width="1.2"/>
+<ellipse cx="1294.33" cy="646.8" rx="7" ry="18" fill="none" stroke="#8A7A68" stroke-width="1.2"/>
+<ellipse cx="1301.67" cy="646.8" rx="7" ry="18" fill="none" stroke="#8A7A68" stroke-width="1.2"/>
+<ellipse cx="1309" cy="646.8" rx="7" ry="18" fill="none" stroke="#8A7A68" stroke-width="1.2"/>
+<line x1="1269.4" y1="697.4" x2="1326.6" y2="697.4" stroke="#D8D2C8" stroke-width="1" />
+<text x="1298" y="674.3" font-size="11" fill="#1F7A4D" text-anchor="middle" font-weight="700" >측면</text>
+<rect x="1111" y="709.5" width="220" height="11" fill="#2B2B2B" stroke="none" />
+<path d="M 1061.5 572 L 1061.5 759" fill="none" stroke="#1F7A4D" stroke-width="2.4" marker-end="url(#arrowG)"/>
+<text x="1063.7" y="638" font-size="11" fill="#1F7A4D" text-anchor="start" font-weight="700" >통로</text>
+<text x="1193.5" y="671" font-size="13" fill="#1F7A4D" text-anchor="middle" font-weight="600" >드레스룸</text>
+<text x="1133" y="770" font-size="15" fill="#1A1A1A" text-anchor="middle" font-weight="600" >방3 침실</text>
+<rect x="1056" y="759" width="176" height="154" fill="#F3E6CF" stroke="#8A7A68" stroke-width="1" rx="4"/>
+<rect x="1060.4" y="763.4" width="167.2" height="17.6" fill="#EFE7DC" stroke="#8A7A68" stroke-width="0.8" />
+<line x1="1012" y1="550" x2="1100" y2="550" stroke="#6B5A4A" stroke-width="2" />
+<path d="M 1100 550 A 88 88 0 0 1 1012 638" fill="none" stroke="#6B5A4A" stroke-width="1.2"/>
+<rect x="1067" y="906.4" width="198" height="8.8" fill="#D6E6EE" stroke="#6A8FA3" stroke-width="1.4" /><line x1="1067" y1="910.8" x2="1265" y2="910.8" stroke="#6A8FA3" stroke-width="1" />
+<rect x="0" y="0" width="1353" height="946" fill="none" stroke="#2B2B2B" stroke-width="5" />
+<rect x="22" y="374" width="704" height="22" fill="#2B2B2B" stroke="none" />
+<rect x="704" y="22" width="22" height="352" fill="#2B2B2B" stroke="none" />
+<rect x="946" y="22" width="22" height="264" fill="#2B2B2B" stroke="none" />
+<rect x="726" y="550" width="22" height="352" fill="#2B2B2B" stroke="none" />
+<rect x="990" y="550" width="22" height="352" fill="#2B2B2B" stroke="none" />
+<rect x="748" y="528" width="583" height="22" fill="#2B2B2B" stroke="none" />
+<rect x="726" y="396" width="22" height="154" fill="#2B2B2B" stroke="none" />
+    </g>
+  
+    <g transform="translate(56,880)">
+      <rect x="-40" y="-80" width="1112" height="1176" rx="16" fill="#FFFFFF" stroke="#D8D2C8"/>
+      <text x="0" y="-48" font-size="16" font-weight="700" fill="#1A1A1A">방3 기존 — 입구 우상단 붙박이 옷장</text>
+      <rect x="962" y="-70" width="72" height="22" rx="11" fill="#8A7A68"/>
+      <text x="998" y="-54" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">AS-IS</text>
+      <rect x="0" y="0" width="812" height="896" fill="#E8D5B0" stroke="#2B2B2B" stroke-width="3"/><rect x="252" y="0" width="560" height="196" fill="#FFFFFF" stroke="#4A4A4A" stroke-width="1.6"/><text x="532" y="109.2" font-size="12" fill="#5C5C5C" text-anchor="middle" font-weight="600">기존 옷장</text><text x="350" y="504" font-size="18" fill="#1A1A1A" text-anchor="middle" font-weight="600">방3</text><line x1="0" y1="0" x2="224" y2="0" stroke="#6B5A4A" stroke-width="3"/><path d="M 224 0 A 224 224 0 0 1 0 224" fill="none" stroke="#6B5A4A" stroke-width="1.4"/><line x1="0" y1="-39.2" x2="812" y2="-39.2" stroke="#C0392B" stroke-width="1"/><text x="406" y="-50.4" font-size="12" fill="#C0392B" text-anchor="middle" font-weight="600">2900 mm</text><line x1="-39.2" y1="0" x2="-39.2" y2="896" stroke="#C0392B" stroke-width="1"/><text x="-61.6" y="448" font-size="12" fill="#C0392B" text-anchor="end" font-weight="600">3200</text><line x1="252" y1="218.4" x2="812" y2="218.4" stroke="#C0392B" stroke-width="1"/><text x="532" y="240.8" font-size="11" fill="#C0392B" text-anchor="middle" font-weight="600">옷장 2000×700</text><text x="112" y="-11.2" font-size="11" fill="#6B5A4A" text-anchor="middle" font-weight="600">문 800</text><rect x="140" y="884.8" width="504" height="22.4" fill="#D6E6EE" stroke="#6A8FA3" stroke-width="1.4"/><text x="392" y="940.8" font-size="11" fill="#6A8FA3" text-anchor="middle" font-weight="600">창</text>
+    </g>
+  
+    <g transform="translate(860,880)">
+      <rect x="-40" y="-80" width="1112" height="1176" rx="16" fill="#FFFFFF" stroke="#D8D2C8"/>
+      <text x="0" y="-48" font-size="16" font-weight="700" fill="#1A1A1A">방3 변경 — 통로형 드레스룸</text>
+      <rect x="962" y="-70" width="72" height="22" rx="11" fill="#1F7A4D"/>
+      <text x="998" y="-54" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">TO-BE</text>
+      <rect x="0" y="0" width="812" height="896" fill="#E8D5B0" stroke="#2B2B2B" stroke-width="3"/><rect x="0" y="0" width="812" height="420" fill="#E4C9B6" stroke="#1F7A4D" stroke-width="2"/><rect x="0" y="0" width="252" height="420" fill="#F6EDE4" stroke="#1F7A4D" stroke-width="1.4"/><rect x="252" y="0" width="560" height="168" fill="#F7F1EA" stroke="#1F7A4D" stroke-width="1.6"/><rect x="644" y="168" width="168" height="252" fill="#F7F1EA" stroke="#1F7A4D" stroke-width="1.6"/><rect x="252" y="406" width="560" height="28" fill="#2B2B2B" stroke="none"/><text x="126" y="210" font-size="13" fill="#1F7A4D" text-anchor="middle" font-weight="600">통로</text><text x="532" y="89.6" font-size="12" fill="#1F7A4D" text-anchor="middle" font-weight="600">상부 행거</text><text x="378" y="560" font-size="16" fill="#1A1A1A" text-anchor="middle" font-weight="600">침실</text><path d="M 126 33.6 L 126 498.4" fill="none" stroke="#1F7A4D" stroke-width="2.2" marker-end="url(#arrowG)"/><line x1="0" y1="0" x2="224" y2="0" stroke="#6B5A4A" stroke-width="3"/><path d="M 224 0 A 224 224 0 0 1 0 224" fill="none" stroke="#6B5A4A" stroke-width="1.4"/><line x1="0" y1="-39.2" x2="812" y2="-39.2" stroke="#C0392B" stroke-width="1"/><text x="406" y="-50.4" font-size="12" fill="#C0392B" text-anchor="middle" font-weight="600">방 폭 2900 mm</text><line x1="0" y1="-78.4" x2="252" y2="-78.4" stroke="#1F7A4D" stroke-width="1"/><text x="126" y="-89.6" font-size="11" fill="#1F7A4D" text-anchor="middle" font-weight="600">통로 900</text><line x1="851.2" y1="0" x2="851.2" y2="420" stroke="#1F7A4D" stroke-width="1"/><text x="873.6" y="210" font-size="11" fill="#1F7A4D" text-anchor="start" font-weight="600">DR 1500</text><line x1="851.2" y1="420" x2="851.2" y2="896" stroke="#C0392B" stroke-width="1"/><text x="873.6" y="658" font-size="11" fill="#C0392B" text-anchor="start" font-weight="600">침실 1700</text><line x1="252" y1="190.4" x2="812" y2="190.4" stroke="#1F7A4D" stroke-width="1"/><text x="532" y="212.8" font-size="11" fill="#1F7A4D" text-anchor="middle" font-weight="600">행거 깊이 600</text><rect x="140" y="884.8" width="504" height="22.4" fill="#D6E6EE" stroke="#6A8FA3" stroke-width="1.4"/><text x="392" y="940.8" font-size="11" fill="#6A8FA3" text-anchor="middle" font-weight="600">창</text>
+    </g>
+  <g transform="translate(1480,180)"><rect x="0" y="0" width="16" height="16" rx="3" fill="#C9A36A" stroke="#ccc"/><text x="24" y="13" font-size="12" fill="#1A1A1A">거실·주방 (우드)</text><rect x="0" y="26" width="16" height="16" rx="3" fill="#E8D5B0" stroke="#ccc"/><text x="24" y="39" font-size="12" fill="#1A1A1A">침실</text><rect x="0" y="52" width="16" height="16" rx="3" fill="#8FB8C9" stroke="#ccc"/><text x="24" y="65" font-size="12" fill="#1A1A1A">욕실</text><rect x="0" y="78" width="16" height="16" rx="3" fill="#B8B8B8" stroke="#ccc"/><text x="24" y="91" font-size="12" fill="#1A1A1A">현관 타일</text><rect x="0" y="104" width="16" height="16" rx="3" fill="#FFFFFF" stroke="#ccc"/><text x="24" y="117" font-size="12" fill="#1A1A1A">기존 옷장</text><rect x="0" y="130" width="16" height="16" rx="3" fill="#E4C9B6" stroke="#ccc"/><text x="24" y="143" font-size="12" fill="#1A1A1A">드레스룸 존</text><rect x="0" y="156" width="16" height="16" rx="3" fill="#1F7A4D" stroke="#ccc"/><text x="24" y="169" font-size="12" fill="#1A1A1A">신설 통로·행거</text></g>
+  
+    <g transform="translate(56,1320)">
+      <text x="0" y="0" font-size="13" font-weight="700" fill="#1A1A1A">치수 근거 · 시공 전 확인</text>
+      <text x="0" y="22" font-size="12" fill="#5C5C5C">현장 실측 데이터는 공개되어 있지 않음. 본 치수는 전용 84.82㎡와 첨부 38A 평면도 비율로 환산한 값이다 (내부 순면 합 81.44000000000001㎡).</text>
+      <text x="0" y="42" font-size="12" fill="#5C5C5C">방3 환산: 2,900 × 3,200 mm. 기존 옷장 함몰 2,000 × 700 mm. 변경: 통로 900 · 행거 깊이 600 · 드레스룸 존 깊이 1,500 · 침실 잔여 깊이 1,700.</text>
+      <text x="0" y="62" font-size="12" fill="#5C5C5C">모듈은 국내 공동주택 관례(문 800, 옷장 600, 통로 900, 경량벽 100). 벽체·창호·문틀 실측 후 발주할 것. 천장고는 미확인.</text>
+    </g>
+</svg>

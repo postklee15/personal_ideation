@@ -10,5 +10,4 @@ alwaysApply: true
 - `_knowledge`에 노트를 만들지 마세요.
 - `10-shared/status`를 갱신하지 마세요.
 - `20-agents/` 폴더를 만들지 마세요.
-- 아이디어 본문은 `ideas/YYYY-MM-DD-<slug>/`에 둡니다.
-- 작업 기록은 그 폴더와 git 커밋·PR·대화에만 남깁니다.
+- 작업 기록은 git 커밋·PR과 대화에만 남깁니다.

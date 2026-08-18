@@ -24,3 +24,4 @@ compile() {
 
 compile "$ROOT/us-30y-ai-capital-briefing.typ" "$ROOT/미국_30년물_금리_AI_자본전쟁_브리핑.pdf"
 compile "$ROOT/discussion-who-blinks.typ" "$ROOT/누가_먼저_항복하는가_후속논의.pdf"
+compile "$ROOT/individual-investor-playbook.typ" "$ROOT/개인투자자_대응틀.pdf"

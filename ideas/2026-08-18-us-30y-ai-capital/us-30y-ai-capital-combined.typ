@@ -11,7 +11,7 @@
 #set document(
   title: "미국 30년물 금리와 AI 자본 전쟁 — 합본",
   author: "시장 브리핑",
-  keywords: ("Treasury", "30Y", "AI", "duration", "mortgage", "household"),
+  keywords: ("Treasury", "30Y", "AI", "duration", "mortgage", "household", "Bitcoin"),
   date: datetime(year: 2026, month: 8, day: 18),
 )
 
@@ -162,17 +162,19 @@
   #block(width: 52mm, height: 3.2pt, fill: amber)
   #v(7mm)
   #text(size: 12pt, fill: slate)[
-    브리핑, 후속 논의, 개인투자자 대응 틀을 한 권으로 묶었다.\
+    브리핑부터 후속 논의, 가상화폐 렌즈, 개인 대응까지 한 권으로 묶었다.\
     연준이 아니라 장기 자본 수급이 만드는 고금리 국면.
   ]
-  #v(8mm)
+  #v(7mm)
 
   #grid(
-    columns: (1fr, 1fr, 1fr),
+    columns: (1fr, 1fr),
+    rows: (auto, auto),
     gutter: 6pt,
     metric([제1부], [브리핑], [구조와 듀레이션]),
     metric([제2부], [후속 논의], [누가 먼저 항복하는가]),
-    metric([제3부], [개인 대응], [가계 부채와 두 질문]),
+    metric([제3부], [가상화폐], [생산성 없는 자산의 시간]),
+    metric([제4부], [개인 대응], [가계 부채와 두 질문]),
   )
 
   #v(8mm)
@@ -195,7 +197,7 @@
     columns: (1fr, 1fr),
     text(size: 8.5pt, fill: muted)[
       작성 기준일  2026년 8월 18일\
-      구성  브리핑 · 누가 먼저 항복하는가 · 개인투자자 대응 틀\
+      구성  브리핑 · 후속 논의 · 가상화폐 · 개인 대응\
       성격  내부 브리핑 / 시장 노트
     ],
     align(right)[
@@ -234,9 +236,17 @@
 #include "parts/discussion-body.typ"
 
 #part-page(
-  [PART III  ·  HOUSEHOLD PLAYBOOK],
-  [제3부  개인투자자 대응 틀],
+  [PART III  ·  CRYPTO LENS],
+  [제3부  가상화폐 렌즈],
+  [생산성 없는 자산의 시간.\ 제로 캐시플로, 실질금리, 스테이블·채굴 층의 갈림.],
+)
+#heading(level: 1, numbering: none)[제3부  가상화폐 렌즈]
+#include "parts/crypto-body.typ"
+
+#part-page(
+  [PART IV  ·  HOUSEHOLD PLAYBOOK],
+  [제4부  개인투자자 대응 틀],
   [종목보다 듀레이션.\ 가계 부채와 두 질문으로 대응의 순서를 정한다.],
 )
-#heading(level: 1, numbering: none)[제3부  개인투자자 대응 틀]
+#heading(level: 1, numbering: none)[제4부  개인투자자 대응 틀]
 #include "parts/playbook-body.typ"

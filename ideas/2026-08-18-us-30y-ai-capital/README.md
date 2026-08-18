@@ -6,11 +6,11 @@
 
 후속 논의에서 규모·반론·한국 렌즈를 대입했고, 개인투자자 대응의 순서를 가계 언어로 옮긴 뒤, 같은 필터를 가상화폐 시장에 대입했다.
 
-합본 (브리핑 · 후속 논의 · 개인 대응)
+합본 (브리핑 · 후속 논의 · 가상화폐 · 개인 대응)
 
-- `us-30y-ai-capital-combined.typ` — 세 편을 한 권으로 묶은 Typst
+- `us-30y-ai-capital-combined.typ` — 네 편을 한 권으로 묶은 Typst
 - `미국_30년물_금리_AI_자본전쟁_합본.pdf` — 열람용 합본 PDF
-- `parts/` — 세 편의 공유 본문. 단독 원본도 여기를 include 한다.
+- `parts/` — 네 편의 공유 본문. 단독 원본도 여기를 include 한다.
 
 선행 브리핑
 
@@ -23,17 +23,17 @@
 - `누가_먼저_항복하는가_후속논의.pdf` — 열람용 PDF
 - `discussion-who-blinks.typ` — Typst 원본
 
-개인투자자 대응 틀
-
-- `individual-investor-playbook.md` — 논의용 마크다운
-- `개인투자자_대응틀.pdf` — 열람용 PDF
-- `individual-investor-playbook.typ` — Typst 원본
-
 가상화폐 렌즈
 
 - `crypto-unproductive-duration.md` — 논의용 마크다운
 - `가상화폐_생산성없는_자산의_시간.pdf` — 열람용 PDF
 - `crypto-unproductive-duration.typ` — Typst 원본
+
+개인투자자 대응 틀
+
+- `individual-investor-playbook.md` — 논의용 마크다운
+- `개인투자자_대응틀.pdf` — 열람용 PDF
+- `individual-investor-playbook.typ` — Typst 원본
 
 - `build.sh` — 로컬 재빌드 스크립트
 

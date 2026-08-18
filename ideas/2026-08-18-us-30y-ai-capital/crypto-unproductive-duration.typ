@@ -8,9 +8,9 @@
 #let paper = rgb("#fbfaf7")
 
 #set document(
-  title: "후속 논의: 누가 먼저 항복하는가",
+  title: "가상화폐 렌즈: 생산성 없는 자산의 시간",
   author: "시장 브리핑",
-  keywords: ("Treasury", "30Y", "AI", "duration", "discussion"),
+  keywords: ("Treasury", "30Y", "Bitcoin", "real-yield", "duration"),
   date: datetime(year: 2026, month: 8, day: 18),
 )
 
@@ -56,13 +56,6 @@
     #it
   ]
 }
-#show heading.where(level: 3): it => {
-  v(2mm)
-  block(below: 1.6mm)[
-    #set text(size: 10.5pt, weight: 700, fill: rgb("#3f5f86"))
-    #it
-  ]
-}
 
 #let kicker(body) = text(size: 8.5pt, weight: 700, fill: amber, tracking: 0.8pt, body)
 #let small(body) = text(size: 8.5pt, fill: muted, body)
@@ -95,7 +88,7 @@
   #align(center)[
     #text(size: 8pt, fill: muted, weight: 700)[#label]
     #v(2pt)
-    #text(size: 13pt, fill: navy, weight: 700)[#value]
+    #text(size: 12.5pt, fill: navy, weight: 700)[#value]
     #v(1pt)
     #text(size: 7.5pt, fill: muted)[#note]
   ]
@@ -119,7 +112,7 @@
     block(width: 100%)[
       #line(length: 100%, stroke: 0.45pt + line-c)
       #v(3pt)
-      후속 논의 · 누가 먼저 항복하는가  ·  2026.08.18
+      가상화폐 렌즈 · 생산성 없는 자산의 시간  ·  2026.08.18
       #h(1fr)
       #counter(page).display("1")
     ]
@@ -128,30 +121,29 @@
 
 #set page(footer: footer-content)
 
-// ===================== 표지 =====================
 #block(width: 100%, height: 100% - 0pt)[
   #v(16mm)
-  #kicker[DISCUSSION MEMO  ·  선행 브리핑의 열린 질문]
+  #kicker[CRYPTO LENS  ·  선행 논의의 두 질문을 이 시장에 대입]
   #v(6mm)
   #text(size: 26pt, weight: 700, fill: navy, tracking: -0.4pt)[
-    후속 논의\
-    누가 먼저 항복하는가
+    가상화폐 렌즈\
+    생산성 없는 자산의 시간
   ]
   #v(5mm)
   #block(width: 52mm, height: 3.2pt, fill: amber)
   #v(7mm)
   #text(size: 12pt, fill: slate)[
-    미국 30년물과 AI 자본 전쟁 브리핑을 전제로,\
-    규모·반론·한국 렌즈를 대입하고 다음에 볼 충돌을 고른다.
+    높은 실질금리와 AI 자본 수급 국면에서\
+    제로 캐시플로 자산이 지는 이유, 그리고 층이 갈리는 이유.
   ]
   #v(9mm)
 
   #grid(
     columns: (1fr, 1fr, 1fr),
     gutter: 6pt,
-    metric([AI 부채 YTD], [약 5,000억], [골드만, 하이퍼스케일러는 그중 40%]),
-    metric([국채 대비 비중], [약 25%], [메가캡 발행 / 순국채·빌 제외·민간]),
-    metric([실질금리], [약 93%], [6월 중순 이후 30년물 상승분]),
+    metric([10년 실질], [약 2.4%], [TIPS. 제로 캐시플로의 허들]),
+    metric([BTC / 금, 1년], [−46% / +32%], [디지털 골드 서사가 갈라진 자리]),
+    metric([국가 바닥], [없음], [연산은 지키고 시총은 안 지킴]),
   )
 
   #v(9mm)
@@ -164,7 +156,7 @@
   )[
     #text(weight: 700, fill: navy, size: 10pt)[한 줄]
     #v(3pt)
-    부족한 것은 돈이 아니라 공적·장기·투명한 듀레이션이다. 연준은 이 게임의 주인공이 아니고, 테이블에는 재무부, 하이퍼스케일러, 보험·실수요, 가계 정치가 앉아 있다.
+    맞다. 기본값은 급락의 한 방이 아니라, 이자를 안 주는 자산이 이자를 주는 안전자산·현금흐름이 가까운 AI 공급망과 자본을 놓고 지는 시간이 길어지는 것이다.
   ]
 
   #v(1fr)
@@ -174,13 +166,13 @@
     columns: (1fr, 1fr),
     text(size: 8.5pt, fill: muted)[
       작성 기준일  2026년 8월 18일\
-      선행  `미국_30년물_금리_AI_자본전쟁_브리핑.pdf`\
-      성격  내부 논의 메모 / 시장 노트
+      선행  30년물 브리핑 · 항복 · 개인 대응 틀\
+      성격  내부 논의 / 시장 노트
     ],
     align(right)[
       #text(size: 8.5pt, fill: muted)[
         본 자료는 투자 권유가 아니다.\
-        브리핑을 다시 쓰지 않는다. 싸울 지점만 고른다.
+        가상화폐를 한 덩어리로 보지 않는다.
       ]
     ],
   )
@@ -190,10 +182,6 @@
 
 #heading(level: 1, numbering: none, outlined: false)[목차]
 #v(1mm)
-#set text(size: 10pt)
-#show outline.entry.where(level: 1): set block(above: 0.85em)
-#show outline.entry.where(level: 2): set text(size: 9.4pt, fill: muted)
 #outline(title: none, indent: 1.1em, depth: 2)
-#set text(size: 10pt)
 
-#include "parts/discussion-body.typ"
+#include "parts/crypto-body.typ"

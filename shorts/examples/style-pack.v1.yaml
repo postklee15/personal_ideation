@@ -1,0 +1,58 @@
+# 채널 재사용 자산. 영상마다 새로 쓰지 않고 버전만 올린다.
+id: knowledge-shorts-v1
+version: 1
+channel:
+  one_liner: 30초 안에 경제·시장 메커니즘 하나를 그림으로 설명
+  language: ko
+  platforms: [youtube_shorts, instagram_reels]
+
+format:
+  aspect_ratio: "9:16"
+  resolution_draft: 720p
+  resolution_final: 1080p
+  target_seconds: 30
+  hook_seconds: 1.5
+  caption_safe_zone: bottom_20_percent
+  onscreen_text_in_frames: false  # 글자는 편집 자막으로만
+
+visual:
+  palette: ["#0B0F14", "#E8D5A3", "#F4F1EA", "#C45C26"]
+  lighting: high-contrast studio, single key light, no neon
+  camera: locked-off or slow push-in, no handheld shake
+  references:
+    - assets/style/ref-01-set.png
+    - assets/style/ref-02-character.png
+    - assets/style/ref-03-palette.png
+  character_sheet: assets/style/character-sheet.png
+  banned:
+    - photoreal celebrity faces
+    - watermarks and fake UI chrome
+    - readable paragraphs drawn into the image
+    - cluttered backgrounds
+
+voice:
+  provider: gemini_tts
+  model: gemini-2.5-pro-preview-tts
+  voice_name: Kore  # 채널 확정 후 고정
+  style_prompt: 또박또박, 조금 낮은 에너지, 뉴스라기보다 옆에서 설명하는 톤. 과한 감탄 금지.
+  pace_chars_per_sec: 7
+
+writing:
+  tone: 짧고 단정. 과시하는 숫자 나열 금지.
+  hook_formulas:
+    - "대부분은 ~라고 생각하지만"
+    - "이 숫자 하나가 ~를 움직인다"
+    - "~이 오르면 왜 주식이 먼저 반응하나"
+  banned_claims:
+    - 무조건 오른다 / 떨어진다
+    - 지금 사라는 식의 투자 권유
+  cta_style: 구독 강요 없이, 저장할 한 줄로 끝낸다
+
+motion:
+  default_shot_seconds: 5
+  shot_seconds_range: [4, 8]
+  transition: hard_cut
+  seedance:
+    generate_audio: false
+    use_first_frame: true
+    use_last_frame_when: shot_must_land_on_specific_end_pose

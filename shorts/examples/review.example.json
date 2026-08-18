@@ -1,0 +1,15 @@
+{
+  "project_id": "2026-08-18-us-30y-hook",
+  "gate": "B",
+  "decisions": [
+    { "shot_id": "shot-01", "status": "approved", "note": "" },
+    { "shot_id": "shot-02", "status": "approved", "note": "" },
+    {
+      "shot_id": "shot-03",
+      "status": "regenerate_frame",
+      "note": "먼 저울이 너무 작아서 안 보임. 크기 차이를 남기되 실루엣은 읽히게."
+    },
+    { "shot_id": "shot-04", "status": "approved", "note": "" },
+    { "shot_id": "shot-05", "status": "approved", "note": "CTA 자막만 편집에서 키워드 색 넣을 것." }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "project_id": "2026-08-18-us-30y-hook",
+  "gate": "B",
+  "status": "pending_review",
+  "style_pack": "knowledge-shorts-v1",
+  "aspect_ratio": "9:16",
+  "shots": [
+    {
+      "id": "shot-01",
+      "script_block": "hook",
+      "seconds": 3,
+      "camera": "slow push-in",
+      "narration": "30년 금리가 0.1%만 올라도, 어떤 주식은 왜 먼저 흔들릴까.",
+      "caption": "금리가 0.1%만 올라도?",
+      "visual_prompt": "Dark studio. Two brass balance scales; the far scale is tiny in the distance, the near scale is large. No readable text. Character looks at the far scale.",
+      "first_frame": "frames/shot-01.png",
+      "last_frame": null,
+      "seedance_motion": "slow push toward the distant scale, dust motes, no morphing objects",
+      "sfx": "low tone hit"
+    },
+    {
+      "id": "shot-02",
+      "script_block": "bit-1",
+      "seconds": 7,
+      "camera": "locked-off",
+      "narration": "주가는 오늘 실적이 아니라, 앞으로 들어올 돈을 오늘 값으로 바꾼 가격이다.",
+      "caption": "주가 = 미래 현금의 오늘 값",
+      "visual_prompt": "Same studio. Calendar pages fly from near to far and shrink as they recede. No letters on the pages. Character stands still.",
+      "first_frame": "frames/shot-02.png",
+      "last_frame": "frames/shot-02-end.png",
+      "seedance_motion": "pages travel into the distance and shrink, lighting stays constant",
+      "sfx": "soft paper"
+    },
+    {
+      "id": "shot-03",
+      "script_block": "bit-2",
+      "seconds": 8,
+      "camera": "locked-off",
+      "narration": "금리가 오르면 그 할인율이 커진다. 먼 미래 돈일수록 오늘 값이 더 많이 깎인다.",
+      "caption": "금리 ↑ → 먼 돈의 오늘 값 ↓",
+      "visual_prompt": "Far scale drops more than the near scale when a weight labeled only as a blank metal cube is added. No typography.",
+      "first_frame": "frames/shot-03.png",
+      "last_frame": "frames/shot-03-end.png",
+      "seedance_motion": "far scale sinks deeper, near scale barely moves",
+      "sfx": "metallic settle"
+    },
+    {
+      "id": "shot-04",
+      "script_block": "bit-3",
+      "seconds": 7,
+      "camera": "cut",
+      "narration": "그래서 현금이 늦게 들어오는 성장주가, 짧게 끝나는 가치주보다 먼저 반응하는 경우가 많다.",
+      "caption": "먼 현금흐름이 먼저 흔들린다",
+      "visual_prompt": "Split composition: left a short sturdy weight close to camera, right a tall fragile tower far away. Same palette. No logos.",
+      "first_frame": "frames/shot-04.png",
+      "last_frame": null,
+      "seedance_motion": "right tower sways first, left weight stays still",
+      "sfx": "subtle rumble"
+    },
+    {
+      "id": "shot-05",
+      "script_block": "cta",
+      "seconds": 5,
+      "camera": "slow pull-back",
+      "narration": "기억할 한 줄. 만기가 긴 자산일수록 금리에 더 민감하다.",
+      "caption": "만기가 길수록 금리에 민감",
+      "visual_prompt": "Empty studio, both scales at rest, character walks out of frame. No on-screen paragraph text.",
+      "first_frame": "frames/shot-05.png",
+      "last_frame": null,
+      "seedance_motion": "slow pull back, lights dim slightly",
+      "sfx": "silence then soft resolve"
+    }
+  ]
+}

@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cursor + Figma · 와이어프레임에서 디자인까지</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" />
+  <style>
+    :root {
+      --paper: #f3eee4;
+      --ink: #17140f;
+      --muted: #5c564c;
+      --line: #d9d1c3;
+      --card: #fffdf8;
+      --accent: #c24b1a;
+      --accent-soft: #f3d9cc;
+      --teal: #1b6b62;
+      --teal-soft: #d5ece8;
+      --blue: #1e4fbf;
+      --blue-soft: #dbe4f8;
+      --ok: #1d6b3a;
+      --ok-soft: #d8edd9;
+      --warn: #9a4d0d;
+      --warn-soft: #f6e3c8;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+      --sans: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #cfc6b6;
+      color: var(--ink);
+      font-family: var(--sans);
+    }
+    .stage {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .deck {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide {
+      display: none;
+      position: absolute;
+      inset: 0;
+      padding: clamp(28px, 5vh, 56px) clamp(32px, 6vw, 80px) 72px;
+      background:
+        radial-gradient(1200px 500px at 100% -10%, #fff8ee 0%, transparent 55%),
+        var(--paper);
+      overflow: auto;
+    }
+    .slide.active { display: flex; flex-direction: column; }
+    .slide.center { justify-content: center; }
+    .kicker {
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin: 0 0 10px;
+    }
+    h1, h2, h3 { margin: 0; line-height: 1.2; font-weight: 750; letter-spacing: -0.03em; }
+    h1 { font-size: clamp(36px, 5vw, 62px); max-width: 16ch; }
+    h2 { font-size: clamp(28px, 3.4vw, 44px); margin-bottom: 20px; }
+    h3 { font-size: 18px; margin: 0 0 8px; }
+    p, li { font-size: clamp(16px, 1.5vw, 20px); line-height: 1.55; color: var(--ink); }
+    .lead { font-size: clamp(20px, 2.1vw, 28px); max-width: 34ch; color: var(--muted); font-weight: 500; }
+    .row { display: grid; gap: 16px; }
+    .row.two { grid-template-columns: 1fr 1fr; }
+    .row.three { grid-template-columns: repeat(3, 1fr); }
+    .row.four { grid-template-columns: repeat(4, 1fr); }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 18px 16px;
+    }
+    .card.accent { background: var(--accent-soft); border-color: #e8b9a3; }
+    .card.teal { background: var(--teal-soft); border-color: #b7d8d3; }
+    .card.blue { background: var(--blue-soft); border-color: #b7c7ee; }
+    .card.warn { background: var(--warn-soft); border-color: #e8c99a; }
+    .card.ok { background: var(--ok-soft); border-color: #b7d8bc; }
+    .card p, .card li { font-size: 16px; margin: 0; }
+    .card ul { margin: 0; padding-left: 1.1em; }
+    .card li + li { margin-top: 6px; }
+    .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      height: 28px;
+      padding: 0 8px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-family: var(--mono);
+    }
+    .chip {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 650;
+      font-family: var(--mono);
+      background: var(--ink);
+      color: #fff;
+    }
+    .chip.cursor { background: var(--blue); }
+    .chip.figma { background: var(--teal); }
+    .chip.gate { background: var(--accent); }
+    .muted { color: var(--muted); }
+    .small, .small li, .small p { font-size: 15px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      font-size: 15px;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th { background: #ebe4d6; font-size: 13px; letter-spacing: .04em; }
+    code, .mono { font-family: var(--mono); font-size: .92em; }
+    pre {
+      margin: 0;
+      padding: 14px 16px;
+      background: #1b1914;
+      color: #f6efe4;
+      border-radius: 12px;
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      position: relative;
+    }
+    .copy {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      border: 0;
+      background: #3a342b;
+      color: #fff;
+      border-radius: 8px;
+      padding: 4px 8px;
+      font: 650 11px var(--sans);
+      cursor: pointer;
+    }
+    .phases {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .phase {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      min-height: 118px;
+    }
+    .phase .id { font-family: var(--mono); font-size: 12px; color: var(--accent); font-weight: 700; }
+    .phase b { display: block; margin: 4px 0 6px; font-size: 16px; }
+    .phase span { font-size: 13px; color: var(--muted); line-height: 1.4; display: block; }
+    .phase.gate { background: var(--accent-soft); border-color: #e8b9a3; }
+    .bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px 12px;
+      font-size: 13px;
+      color: #3d382f;
+    }
+    .progress {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 4px;
+      background: #d8d0c2;
+    }
+    .progress > i {
+      display: block;
+      height: 100%;
+      background: var(--accent);
+      width: 0;
+    }
+    .help, .gridview, .notes {
+      display: none;
+      position: absolute;
+      inset: 0;
+      background: rgba(23, 20, 15, .88);
+      color: #fff;
+      z-index: 5;
+      padding: 40px;
+      overflow: auto;
+    }
+    .help.open, .gridview.open, .notes.open { display: block; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .grid button {
+      text-align: left;
+      background: #2a261f;
+      color: #fff;
+      border: 1px solid #4a4338;
+      border-radius: 10px;
+      padding: 12px;
+      cursor: pointer;
+      font: 600 13px var(--sans);
+    }
+    .grid button.on { outline: 2px solid #f0a070; }
+    .cols { columns: 2; gap: 28px; }
+    .cols p { break-inside: avoid; }
+    @media (max-width: 980px) {
+      .row.two, .row.three, .row.four, .phases { grid-template-columns: 1fr 1fr; }
+      .cols { columns: 1; }
+      h1 { max-width: none; }
+    }
+    @media print {
+      html, body, .stage, .deck { height: auto; background: #fff; }
+      .slide { display: flex !important; position: relative; page-break-after: always; min-height: 100vh; overflow: visible; }
+      .bar, .progress, .help, .gridview, .notes, .copy { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="bar">
+      <span>Cursor + Figma 디자인 프로세스 · ← → 이동 · G 전체 · N 메모</span>
+      <span id="counter">1 / 1</span>
+    </div>
+    <div class="deck" id="deck">
+
+      <section class="slide center active" data-notes="오프닝. 기존 4단계를 폐기하는 발표가 아니라, Agent가 픽셀부터 그리는 낭비를 줄이자는 발표다.">
+        <p class="kicker">팀 워크숍 · 2026-08-18</p>
+        <h1>와이어프레임에서 디자인까지</h1>
+        <p class="lead" style="margin-top:20px">Cursor와 Figma MCP로 서비스 개요를 화면까지 옮기는 절차.</p>
+        <p class="muted" style="margin-top:28px;font-size:15px">대상: 기획 · 디자인 · 에이전트 워크플로를 같이 쓰는 팀</p>
+      </section>
+
+      <section class="slide" data-notes="아젠다는 세 덩어리. 왜 보완하는지, 무엇을 쓰는지, 어떻게 프롬프트하는지.">
+        <p class="kicker">Agenda</p>
+        <h2>오늘 맞출 세 가지</h2>
+        <div class="row three">
+          <div class="card">
+            <div class="num">01</div>
+            <h3>기존 절차를 살린다</h3>
+            <p>개요 → 다이어그램 → 와이어 → 테마·레퍼런스 디자인은 유지한다. 빠진 게이트만 끼운다.</p>
+          </div>
+          <div class="card teal">
+            <div class="num">02</div>
+            <h3>도구를 단계에 묶는다</h3>
+            <p>각 단계에서 Cursor가 쓰는 산출물과 Figma MCP 도구를 한 세트로 고정한다.</p>
+          </div>
+          <div class="card accent">
+            <div class="num">03</div>
+            <h3>프롬프트 규약을 맞춘다</h3>
+            <p>한 번에 앱 전체를 그리지 않는다. 인벤토리, 한 화면, 한 섹션 단위로 요청한다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-notes="청중이 이미 쓰는 4단계를 먼저 인정한다.">
+        <p class="kicker">As-is</p>
+        <h2>지금 팀이 쓰는 4단계</h2>
+        <div class="row two">
+          <div class="card">
+            <div class="num">1</div>
+            <h3>서비스 개요</h3>
+            <p>목적, 타겟, 사용자 시나리오를 글로 고정한다.</p>
+          </div>
+          <div class="card">
+            <div class="num">2</div>
+            <h3>다이어그램으로 재정리</h3>
+            <p>Agent가 IA, Sequence 등으로 서비스를 한 번 더 구조화한다.</p>
+          </div>
+          <div class="card">
+            <div class="num">3</div>
+            <h3>와이어프레임</h3>
+            <p>화면 골격과 정보 배치를 그린다.</p>
+          </div>
+          <div class="card">
+            <div class="num">4</div>
+            <h3>테마 후 디자인</h3>
+            <p>4-1 App Theme(Primary Light/Dark, Mood). 4-2 레퍼런스 + 테마로 와이어를 입힌다.</p>
+          </div>
+        </div>
+        <p class="muted small" style="margin-top:18px">방향은 맞다. 문제는 단계 사이가 비어 있고, Agent가 4번으로 바로 뛰어넘는 것이다.</p>
+      </section>
+
+      <section class="slide" data-notes="부족한 점을 비난이 아니라, 어디서 작업이 새는지로 말한다.">
+        <p class="kicker">Gaps</p>
+        <h2>이 4단계에서 자주 빠지는 것</h2>
+        <div class="row two">
+          <div class="card warn">
+            <h3>시작 전</h3>
+            <ul>
+              <li>플랫폼·디바이스·기존 디자인 시스템·브랜드 제약</li>
+              <li>Figma 파일 분리(FigJam / Design)와 MCP 권한</li>
+              <li>하지 않을 일(비목표)과 성공 기준</li>
+            </ul>
+          </div>
+          <div class="card warn">
+            <h3>와이어 전</h3>
+            <ul>
+              <li>화면 목록과 핵심 플로우 우선순위</li>
+              <li>Empty / Loading / Error / Permission 상태</li>
+              <li>IA를 마인드맵으로 요청하면 MCP가 거절한다</li>
+            </ul>
+          </div>
+          <div class="card warn">
+            <h3>디자인 전</h3>
+            <ul>
+              <li>레퍼런스가 테마보다 뒤에 오면 Primary만 정해진다</li>
+              <li>컬러만 있고 타이포·간격·라디우스·엘리베이션이 없다</li>
+              <li>버튼·인풋·리스트를 안 만들고 화면부터 칠한다</li>
+            </ul>
+          </div>
+          <div class="card warn">
+            <h3>디자인 후</h3>
+            <ul>
+              <li>사람 리뷰 없이 다음 화면으로 진행</li>
+              <li>다크모드를 복제 프레임으로 그려 토큰이 갈라진다</li>
+              <li>구현 핸드오프와 프로토타입 연결이 없다</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-notes="원칙은 네 개만. 이후 슬라이드는 이 원칙의 적용이다.">
+        <p class="kicker">Principles</p>
+        <h2>보완할 때 지키는 네 규칙</h2>
+        <div class="row two">
+          <div class="card">
+            <div class="num">A</div>
+            <h3>피델리티를 건너뛰지 않는다</h3>
+            <p>예쁜 화면이 틀린 구조면 수정 비용이 더 크다. 개요·IA·와이어가 통과하기 전에 컬러를 넣지 않는다.</p>
+          </div>
+          <div class="card">
+            <div class="num">B</div>
+            <h3>사람 게이트를 단계 사이에 둔다</h3>
+            <p>Agent는 초안을 만든다. IA/와이어와 테마/컴포넌트에서 사람이 한 번씩 멈춘다.</p>
+          </div>
+          <div class="card">
+            <div class="num">C</div>
+            <h3>토큰과 컴포넌트가 화면보다 앞선다</h3>
+            <p>hex를 화면에 박지 않는다. Light/Dark는 변수 모드다. 반복 UI는 로컬 컴포넌트 먼저.</p>
+          </div>
+          <div class="card">
+            <div class="num">D</div>
+            <h3>MCP는 작게, 같은 파일을 재사용한다</h3>
+            <p>한 프롬프트에 앱 전체를 넣지 않는다. 다이어그램을 고칠 때도 새 FigJam을 만들지 않는다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-notes="한 장 프로세스. 기존 1~4가 P1, P2, P4, P5–P7에 대응한다.">
+        <p class="kicker">To-be</p>
+        <h2>정립한 8단계</h2>
+        <div class="phases">
+          <div class="phase"><span class="id">P0</span><b>사전 준비</b><span>플랫폼, 제약, Figma 파일, MCP</span></div>
+          <div class="phase"><span class="id">P1</span><b>서비스 개요</b><span>목적·타겟·시나리오·비목표</span></div>
+          <div class="phase"><span class="id">P2</span><b>IA · 다이어그램</b><span>사이트맵, 시퀀스, 상태</span></div>
+          <div class="phase"><span class="id">P3</span><b>화면 인벤토리</b><span>화면 목록, 우선순위, 상태</span></div>
+          <div class="phase"><span class="id">P4</span><b>와이어프레임</b><span>그레이스케일, 디바이스 프레임</span></div>
+          <div class="phase gate"><span class="id">G1</span><b>게이트</b><span>구조 확정. 아직 컬러 없음</span></div>
+          <div class="phase"><span class="id">P5–P6</span><b>테마 · 컴포넌트</b><span>레퍼런스 → 토큰 → 원자 UI</span></div>
+          <div class="phase"><span class="id">P7</span><b>하이파이 · 핸드오프</b><span>화면, 프로토, 선택적 구현</span></div>
+        </div>
+        <p class="muted small" style="margin-top:16px">기존 1→P1, 2→P2, 3→P4, 4→P5–P7. 새로 끼운 것은 P0, P3, G1, P6이다.</p>
+      </section>
+
+      <section class="slide" data-notes="도구를 역할로 나눈다. Cursor는 언어와 판단, Figma는 캔버스.">
+        <p class="kicker">Tools</p>
+        <h2>누가 무엇을 맡는가</h2>
+        <div class="row two">
+          <div class="card blue">
+            <span class="chip cursor">Cursor</span>
+            <h3 style="margin-top:12px">언어 · 구조 · 게이트</h3>
+            <ul>
+              <li>개요서, 화면 목록, 수락 기준을 마크다운으로 고정</li>
+              <li>다이어그램용 Mermaid 초안</li>
+              <li>단계별 프롬프트와 리뷰 코멘트</li>
+              <li>구현이 필요할 때만 코드. 이 프로세스의 본선은 아니다</li>
+            </ul>
+          </div>
+          <div class="card teal">
+            <span class="chip figma">Figma MCP</span>
+            <h3 style="margin-top:12px">캔버스 · 토큰 · 화면</h3>
+            <ul>
+              <li>FigJam: IA, 시퀀스, 상태 다이어그램</li>
+              <li>Design: 와이어, 변수, 컴포넌트, 하이파이</li>
+              <li><code>get_screenshot</code>으로 섹션마다 시각 검증</li>
+              <li>선택: <code>get_design_context</code>로 구현 참고</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-notes="파일은 두 개. 다이어그램을 디자인 파일에 억지로 넣지 않는다.">
+        <p class="kicker">Artifacts</p>
+        <h2>세션마다 남기는 파일</h2>
+        <table>
+          <thead>
+            <tr><th>위치</th><th>이름 규칙</th><th>만드는 MCP</th><th>내용</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cursor 저장소</td>
+              <td><code>ideas/날짜-slug/brief.md</code></td>
+              <td>—</td>
+              <td>개요, 비목표, 화면 목록, 게이트 기록</td>
+            </tr>
+            <tr>
+              <td>FigJam</td>
+              <td><code>{서비스} — IA & Flows</code></td>
+              <td><code>generate_diagram</code></td>
+              <td>사이트맵(플로차트), 시퀀스, 상태</td>
+            </tr>
+            <tr>
+              <td>Figma Design</td>
+              <td><code>{서비스} — Product Design</code></td>
+              <td><code>create_new_file</code> → <code>use_figma</code></td>
+              <td>Cover, Wire, Theme, Components, Screens</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="muted small" style="margin-top:16px"><code>generate_diagram</code>은 호출마다 새 초안 파일을 만든다. 두 번째부터는 같은 <code>fileKey</code>를 넘긴다. <code>create_new_file</code>은 다이어그램 앞에 쓰지 않는다.</p>
+      </section>
+
+      <section class="slide" data-notes="P0. MCP가 안 붙어 있으면 이후 산출물이 텍스트로만 남는다.">
+        <p class="kicker">P0 · Setup</p>
+        <h2>그리기 전에 잠글 것</h2>
+        <div class="row two">
+          <div class="card">
+            <h3>제품 제약</h3>
+            <ul>
+              <li>플랫폼: iOS / Android / Web / 반응형</li>
+              <li>기준 프레임: 예) 390×844, 1440×960</li>
+              <li>기존 라이브러리·브랜드 컬러 유무</li>
+              <li>접근성 하한: 대비율, 탭 영역 44px</li>
+            </ul>
+          </div>
+          <div class="card teal">
+            <h3>Figma MCP</h3>
+            <ul>
+              <li>Cursor에서 Figma MCP 연결·로그인</li>
+              <li><code>whoami</code>로 planKey 확인. 팀이 여럿이면 어디 파일인지 고른다</li>
+              <li>Design 파일 하나, FigJam은 다이어그램이 만들게 둔다</li>
+              <li>페이지: <code>00 Cover / 01 Wire / 02 Theme / 03 Components / 04 Screens</code></li>
+            </ul>
+          </div>
+        </div>
+        <pre style="margin-top:16px"><button class="copy" type="button">복사</button>Figma MCP가 연결돼 있는지 확인해. whoami로 plan을 보고,
+Design 파일 "{서비스명} — Product Design"을 하나 만들어.
+페이지는 00 Cover, 01 Wireframes, 02 Theme, 03 Components, 04 Screens로 나눠.
+지금은 페이지 골격만 만들고 화면은 그리지 마.</pre>
+      </section>
+
+      <section class="slide" data-notes="기존 1단계를 보강. 시나리오만 있으면 Agent가 기능을 창작한다.">
+        <p class="kicker">P1 · Brief</p>
+        <h2>서비스 개요 — 기존 1단계 보강</h2>
+        <div class="row two">
+          <div class="card ok">
+            <h3>이미 하던 것</h3>
+            <ul>
+              <li>목적</li>
+              <li>타겟</li>
+              <li>사용자 시나리오</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>꼭 추가할 것</h3>
+            <ul>
+              <li>한 줄 문제 정의와 하지 않을 일</li>
+              <li>핵심 과업 3개(이 앱에서 반드시 끝나는 일)</li>
+              <li>성공을 무엇으로 볼지(정성 기준도 가능)</li>
+              <li>레퍼런스 URL 3~5개와 “가져올 점 / 버릴 점”</li>
+            </ul>
+          </div>
+        </div>
+        <p class="muted small" style="margin-top:16px">레퍼런스는 테마 단계가 아니라 개요에 붙인다. 색깔을 고르기 전에 “밀도, 위계, 무드”를 말로 고정한다.</p>
+      </section>
+
+      <section class="slide" data-notes="P2. generate_diagram 한계를 명확히.">
+        <p class="kicker">P2 · Diagrams</p>
+        <h2>Agent에게 다시 그리게 하는 이유</h2>
+        <p style="margin:0 0 16px;max-width:46ch">개요의 구멍을 드러내기 위해서다. 예쁜 그림이 목적이 아니다. 빠진 화면, 모호한 주체, 불가능한 순서가 여기서 걸린다.</p>
+        <table>
+          <thead>
+            <tr><th>보고 싶은 것</th><th>쓸 다이어그램</th><th>MCP</th><th>주의</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>정보 구조 · 내비</td><td>플로차트(사이트맵)</td><td><code>generate_diagram</code></td><td>마인드맵·저니는 미지원</td></tr>
+            <tr><td>사용자 ↔ 시스템 시간축</td><td>시퀀스</td><td><code>generate_diagram</code></td><td>Note는 렌더러가 버린다</td></tr>
+            <tr><td>화면/세션 상태</td><td>상태 다이어그램</td><td><code>generate_diagram</code></td><td>로그인, 권한, 결제 같은 분기</td></tr>
+            <tr><td>데이터 엔티티</td><td>ERD</td><td><code>generate_diagram</code></td><td>필요할 때만</td></tr>
+            <tr><td>주석·색 구분</td><td>FigJam 스티커</td><td><code>use_figma</code></td><td>생성 후 하이브리드</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="slide" data-notes="IA를 마크다운으로 먼저 확정하면 다이어그램 품질이 올라간다.">
+        <p class="kicker">P2 · How</p>
+        <h2>다이어그램은 이렇게 요청한다</h2>
+        <div class="row two">
+          <div>
+            <pre><button class="copy" type="button">복사</button>brief.md를 읽고 아래만 만들어.
+1) 사이트맵을 Mermaid flowchart로. 깊이는 3단.
+2) 핵심 시나리오 1개의 sequenceDiagram.
+3) 로그인~권한 상태 diagram.
+generate_diagram으로 FigJam에 그려.
+이미 보드가 있으면 같은 fileKey에 이어서 넣어.
+노드를 창작하지 마. brief에 없는 기능은 빈칸으로 표시해.</pre>
+          </div>
+          <div class="card">
+            <h3>Agent가 기능을 창작하지 않게</h3>
+            <ul>
+              <li>없는 기능은 그리지 말고 표시만</li>
+              <li>이모지, HTML 라벨, <code>\n</code> 금지(도구가 거절)</li>
+              <li>같은 서비스를 고칠 때는 파일 재사용</li>
+              <li>두 번 그려도 만족 못 하면 사람이 FigJam에서 고친다</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-notes="P3가 없으면 와이어가 ‘그럴듯한 홈’만 반복한다.">
+        <p class="kicker">P3 · Inventory</p>
+        <h2>화면을 세기 전에 그리지 않는다</h2>
+        <div class="row two">
+          <div class="card">
+            <h3>화면 목록 표</h3>
+            <p class="small">ID · 화면 이름 · 진입 경로 · 핵심 과업 · 우선순위(P0/P1/P2) · 필요 상태</p>
+          </div>
+          <div class="card">
+            <h3>상태 세트(화면마다)</h3>
+            <p class="small">Default, Empty, Loading, Error, Success, Permission denied. 해당 없으면 N/A.</p>
+          </div>
+          <div class="card accent">
+            <h3>이번 스프린트 범위</h3>
+            <p class="small">P0 화면만 와이어한다. “있으면 좋은 설정 탭”은 목록에만 남긴다.</p>
+          </div>
+          <div class="card teal">
+            <h3>Cursor 산출물</h3>
+            <p class="small"><code>screens.md</code> 표. Figma Cover 페이지에 같은 표를 요약 프레임으로 옮겨도 된다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-notes="P4. 그레이스케일 강제. 컬러를 넣기 시작하면 레이아웃 리뷰가 안 된다.">
+        <p class="kicker">P4 · Wireframes</p>
+        <h2>와이어는 회색으로만</h2>
+        <div class="row three">
+          <div class="card">
+            <h3>해야 할 일</h3>
+            <ul class="small">
+              <li>기준 디바이스 프레임</li>
+              <li>Auto Layout, 실제에 가까운 카피</li>
+              <li>내비·탭바·제스처 영역</li>
+              <li>화면당 골격 한 세트</li>
+            </ul>
+          </div>
+          <div class="card warn">
+            <h3>하지 말 일</h3>
+            <ul class="small">
+              <li>브랜드 컬러, 그라디언트, 일러스트</li>
+              <li>한 프롬프트에 12화면</li>
+              <li>Lorem ipsum으로 높이 속이기</li>
+              <li>절대좌표로 박스 쌓기</li>
+            </ul>
+          </div>
+          <div class="card teal">
+            <h3>MCP 순서</h3>
+            <ul class="small">
+              <li><code>use_figma</code>로 페이지·프레임</li>
+              <li>화면 래퍼 먼저, 섹션은 그 안</li>
+              <li>섹션마다 <code>get_screenshot</code></li>
+              <li>잘린 텍스트·겹침만 고친다</li>
+            </ul>
+          </div>
+        </div>
+        <pre style="margin-top:16px"><button class="copy" type="button">복사</button>01 Wireframes 페이지에 P0 화면만 그려.
+회색(#111/#666/#DDD)만 사용. 컬러·그림자·이미지 금지.
+각 화면은 디바이스 프레임 하나. 래퍼를 먼저 만들고 섹션은 그 안에.
+한 호출에 섹션 하나. 끝나면 get_screenshot으로 겹침·잘림을 고친 뒤 다음 화면.</pre>
+      </section>
+
+      <section class="slide" data-notes="G1. 여기서 안 멈추면 하이파이가 와이어를 덮어 구조를 못 고친다.">
+        <p class="kicker">G1 · Gate</p>
+        <h2>컬러 전에 사람이 보는 질문</h2>
+        <div class="row two">
+          <div class="card accent">
+            <ul>
+              <li>핵심 과업 3개가 화면 목록에 있는가</li>
+              <li>시퀀스의 모든 hop이 화면 ID와 맞는가</li>
+              <li>Empty/Error를 어디로 보낼지 정했는가</li>
+              <li>이번 범위 밖 화면을 와이어에 몰래 넣지 않았는가</li>
+              <li>카피만 읽어도 위계가 보이는가</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>통과 조건</h3>
+            <p>기획 또는 정한 리뷰어 한 명이 <code>brief.md</code>에 “G1 pass”와 고친 점을 한 줄 남긴다. 그 전에는 P5를 시작하지 않는다.</p>
+            <p class="muted small" style="margin-top:12px">Agent에게 “괜찮으면 디자인까지”라고 쓰지 않는다. 게이트를 프롬프트에 명시한다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-notes="기존 4-1/4-2의 순서를 바꾼다. 레퍼런스 → 무드 → 토큰.">
+        <p class="kicker">P5 · Theme</p>
+        <h2>테마는 Primary 한 색이 아니다</h2>
+        <div class="row two">
+          <div class="card">
+            <h3>기존 4-1을 이렇게 넓힌다</h3>
+            <ul>
+              <li>레퍼런스 3~5장을 Theme 페이지에 붙인다</li>
+              <li>무드 키워드 4개(예: quiet, dense, warm, trustworthy)</li>
+              <li>Primitives: brand, gray ramp, danger/success/warning</li>
+              <li>Semantic: bg, surface, text, border, accent</li>
+              <li>Type scale, space/4, radius, elevation</li>
+              <li>Light / Dark는 같은 컬렉션의 <b>모드</b></li>
+            </ul>
+          </div>
+          <div class="card teal">
+            <h3>MCP</h3>
+            <ul>
+              <li>레퍼런스 이미지: <code>upload_assets</code> 또는 파일에 붙여 넣은 뒤 해시 복사</li>
+              <li>변수·모드는 <code>use_figma</code> + 라이브러리 스킬 순서(토큰 → 스타일)</li>
+              <li>변수마다 scope를 지정. <code>ALL_SCOPES</code> 금지</li>
+              <li>이미 팀 라이브러리가 있으면 <code>get_libraries</code> → <code>search_design_system</code>이 먼저</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-notes="P6. 화면을 칠하기 전에 원자. 이게 없으면 하이파이가 전부 원오프 프레임이 된다.">
+        <p class="kicker">P6 · Components</p>
+        <h2>화면보다 원자를 먼저 만든다</h2>
+        <div class="row three">
+          <div class="card">
+            <h3>최소 세트</h3>
+            <p class="small">Button, Text field, List row, Nav/Tab bar, Card, Toast/Banner, Empty state, Icon slot</p>
+          </div>
+          <div class="card">
+            <h3>Variant</h3>
+            <p class="small">size, hierarchy(primary/secondary/ghost), state(default/hover/disabled/error), Light/Dark는 모드로</p>
+          </div>
+          <div class="card teal">
+            <h3>규칙</h3>
+            <p class="small">색·간격은 변수 바인딩. 아이콘은 SVG import. 회전한 선으로 아이콘을 재구성하지 않는다.</p>
+          </div>
+        </div>
+        <pre style="margin-top:16px"><button class="copy" type="button">복사</button>02 Theme 변수를 쓰고 03 Components에 최소 세트를 만들어.
+색은 hex 하드코딩 금지. 바인딩만.
+화면은 아직 그리지 마. 컴포넌트 페이지를 get_screenshot으로 보여준 뒤 멈춰.</pre>
+      </section>
+
+      <section class="slide" data-notes="P7. 기존 4-2. 와이어를 덮어쓰지 말고 옆에 하이파이를 둔다.">
+        <p class="kicker">P7 · High-fi</p>
+        <h2>와이어를 입히되, 덮어쓰지 않는다</h2>
+        <div class="row two">
+          <div class="card">
+            <ul>
+              <li>04 Screens에 P0부터. 01 Wire는 그대로 두고 페이지를 나눈다</li>
+              <li>컴포넌트 인스턴스만 조립. 박스 재발명 금지</li>
+              <li>한 화면 = 래퍼 생성 → 섹션 단위 <code>use_figma</code> → 섹션 스크린샷</li>
+              <li>웹이고 라이브 URL이 있으면 <code>generate_figma_design</code> 캡처와 병행 가능. 캡처는 참고 후 삭제</li>
+              <li>Dark는 프레임 복제가 아니라 모드 전환으로 검증</li>
+            </ul>
+          </div>
+          <div class="card warn">
+            <h3>한 번에 실패하는 요청</h3>
+            <p class="small">“레퍼런스처럼 앱 전체를 예쁘게 그려줘.” 결과는 토큰 없는 그림이다. 화면 ID, 쓸 컴포넌트, Light/Dark 중 어느 모드인지를 적는다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-notes="검증과 핸드오프는 선택 가능하게. 디자인만 하는 스프린트도 있다.">
+        <p class="kicker">Close</p>
+        <h2>그린 다음</h2>
+        <div class="row three">
+          <div class="card">
+            <span class="chip gate">G2</span>
+            <h3 style="margin-top:10px">디자인 리뷰</h3>
+            <p class="small">대비율, 탭 영역, 잘린 글자, 플레이스홀더(“Title”) 잔존, 와이어 대비 빠진 상태.</p>
+          </div>
+          <div class="card">
+            <h3>프로토타입</h3>
+            <p class="small">핵심 시퀀스 1개를 연결한다. 모든 화면을 플로우로 묶지 않는다.</p>
+          </div>
+          <div class="card teal">
+            <h3>구현이 필요할 때</h3>
+            <p class="small"><code>get_design_context</code>는 참고 코드다. 프로젝트 컴포넌트에 맞게 옮긴다. Code Connect는 라이브러리가 안정된 뒤.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-notes="프롬프트 골격. 네 줄이면 대부분의 폭주를 막는다.">
+        <p class="kicker">Prompts</p>
+        <h2>모든 단계에 넣는 네 줄</h2>
+        <pre style="margin-top:8px"><button class="copy" type="button">복사</button>역할: Cursor + Figma MCP로 [P?]만 수행.
+입력: brief.md, screens.md, Figma fileKey [ ], 지금 페이지 [ ].
+범위: [화면 ID 또는 컴포넌트]. 다음 단계로 넘어가지 마.
+제약: 없는 기능을 창작하지 마. hex 하드코딩 금지(P5+).
+완료: 만든 node id / file URL과 get_screenshot 결과를 보고하고 멈춰.</pre>
+        <p class="muted small" style="margin-top:16px">전체 치트시트는 같은 폴더 <code>prompts.md</code>.</p>
+      </section>
+
+      <section class="slide" data-notes="안티패턴은 경험담처럼 짧게.">
+        <p class="kicker">Anti-patterns</p>
+        <h2>이렇게 시키면 실패한다</h2>
+        <div class="row two">
+          <div class="card warn">
+            <ul>
+              <li>“Linear 느낌으로 온보딩부터 설정까지”</li>
+              <li>다이어그램을 돌릴 때마다 새 보드</li>
+              <li>다크모드 화면을 복제해서 색만 반전</li>
+              <li>아이콘을 선·원으로 다시 그림</li>
+              <li>에러 없이 끝난 스크립트를 성공으로 간주(폰트가 Inter로 바뀌어도 성공으로 보임)</li>
+              <li>Figma 파일 없이 로컬 HTML을 디자인으로 대체하고 끝</li>
+            </ul>
+          </div>
+          <div class="card ok">
+            <ul>
+              <li>화면 ID와 레퍼런스 “가져올 점”을 명시</li>
+              <li>같은 <code>fileKey</code>에 이어서 생성</li>
+              <li>변수 모드로 Light/Dark</li>
+              <li>코드 또는 키트에서 SVG import</li>
+              <li>섹션 스크린샷으로 잘림·폰트·플레이스홀더를 사람이 확인</li>
+              <li>산출물은 Figma. HTML PT는 이 프로세스 문서용</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-notes="RACI를 가볍게. Agent를 역할로 넣는다.">
+        <p class="kicker">Team</p>
+        <h2>누가 게이트를 닫는가</h2>
+        <table>
+          <thead>
+            <tr><th>단계</th><th>초안</th><th>확정</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>P0 준비, 파일</td><td>작업자 + Agent</td><td>작업자</td></tr>
+            <tr><td>P1 개요</td><td>기획 / 작업자</td><td>기획</td></tr>
+            <tr><td>P2–P3 IA · 인벤토리</td><td>Agent</td><td>기획</td></tr>
+            <tr><td>P4 와이어 · G1</td><td>Agent</td><td>기획 + 디자인</td></tr>
+            <tr><td>P5–P6 테마 · 컴포넌트</td><td>Agent</td><td>디자인</td></tr>
+            <tr><td>P7 하이파이 · G2</td><td>Agent</td><td>디자인</td></tr>
+            <tr><td>핸드오프</td><td>Agent</td><td>엔지니어</td></tr>
+          </tbody>
+        </table>
+        <p class="muted small" style="margin-top:14px">한 사람이 전 역할을 해도 게이트 기록은 남긴다. “내가 그렸으니 통과”가 아니라 “무엇을 보고 통과했는지”다.</p>
+      </section>
+
+      <section class="slide" data-notes="체크리스트를 읽어주고 끝내지 말고, 다음 파일럿 서비스 하나를 고르자고 제안.">
+        <p class="kicker">Checklist</p>
+        <h2>파일럿 한 서비스에 적용할 때</h2>
+        <div class="cols">
+          <p><b>P0</b> MCP 로그인, Design 파일, 페이지 5개, 플랫폼·프레임 기록</p>
+          <p><b>P1</b> 목적/타겟/시나리오 + 비목표 + 과업 3 + 레퍼런스 3</p>
+          <p><b>P2</b> 사이트맵 플로차트, 핵심 시퀀스 1, 상태 1. 같은 FigJam</p>
+          <p><b>P3</b> 화면 표와 상태. P0 범위만 별도 표시</p>
+          <p><b>G1</b> 사람 한 줄. 컬러 시작 금지</p>
+          <p><b>P4</b> 회색 와이어, 섹션 단위, 스크린샷</p>
+          <p><b>P5</b> 레퍼런스 보드, semantic 토큰, Light/Dark 모드</p>
+          <p><b>P6</b> 최소 컴포넌트, 변수 바인딩, 페이지 리뷰 후 정지</p>
+          <p><b>P7</b> P0 화면 하이파이, 인스턴스 조립, G2</p>
+          <p><b>닫기</b> 시퀀스 1개 프로토. 구현은 필요할 때만</p>
+        </div>
+      </section>
+
+      <section class="slide center" data-notes="Q&A. 파일럿 서비스와 리뷰어를 정하고 끝낸다.">
+        <p class="kicker">Next</p>
+        <h1>파일럿 하나부터</h1>
+        <p class="lead" style="margin-top:20px">다음에 디자인할 서비스 이름, G1/G2 리뷰어, Figma 팀 plan을 이 자리에서 고른다.</p>
+        <p class="muted" style="margin-top:28px;font-size:15px">슬라이드: 이 파일 · 프롬프트: <code>prompts.md</code> · <span class="mono">← →</span> 이동 · <span class="mono">G</span> 전체 · <span class="mono">N</span> 메모</p>
+      </section>
+
+    </div>
+    <div class="progress"><i id="bar"></i></div>
+    <div class="help" id="help">
+      <h2>조작</h2>
+      <p>← → 또는 Space: 이동 · Home/End · G: 전체 보기 · N: 발표 메모 · ?: 이 도움말 · P: 인쇄</p>
+    </div>
+    <div class="gridview" id="gridview">
+      <h2 style="margin:0 0 16px">전체 보기</h2>
+      <div class="grid" id="grid"></div>
+    </div>
+    <div class="notes" id="notes"><p id="noteText"></p></div>
+  </div>
+  <script>
+    const slides = [...document.querySelectorAll(".slide")];
+    const counter = document.getElementById("counter");
+    const bar = document.getElementById("bar");
+    const help = document.getElementById("help");
+    const gridview = document.getElementById("gridview");
+    const notes = document.getElementById("notes");
+    const noteText = document.getElementById("noteText");
+    const grid = document.getElementById("grid");
+    let i = Math.max(0, parseInt(location.hash.slice(1), 10) - 1 || 0);
+
+    function titles() {
+      return slides.map((s, idx) => {
+        const h = s.querySelector("h1, h2");
+        return (idx + 1) + ". " + (h ? h.textContent : "슬라이드");
+      });
+    }
+    titles().forEach((t, idx) => {
+      const b = document.createElement("button");
+      b.textContent = t;
+      b.addEventListener("click", () => { i = idx; closeOverlays(); show(); });
+      grid.appendChild(b);
+    });
+
+    function closeOverlays() {
+      help.classList.remove("open");
+      gridview.classList.remove("open");
+      notes.classList.remove("open");
+    }
+    function show() {
+      i = (i + slides.length) % slides.length;
+      slides.forEach((s, idx) => s.classList.toggle("active", idx === i));
+      [...grid.children].forEach((b, idx) => b.classList.toggle("on", idx === i));
+      counter.textContent = (i + 1) + " / " + slides.length;
+      bar.style.width = ((i + 1) / slides.length * 100) + "%";
+      noteText.textContent = slides[i].dataset.notes || "";
+      history.replaceState(null, "", "#" + (i + 1));
+    }
+    function go(d) { closeOverlays(); i += d; show(); }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === " " || e.key === "PageDown") { e.preventDefault(); go(1); }
+      else if (e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); go(-1); }
+      else if (e.key === "Home") { i = 0; closeOverlays(); show(); }
+      else if (e.key === "End") { i = slides.length - 1; closeOverlays(); show(); }
+      else if (e.key === "g" || e.key === "G") { gridview.classList.toggle("open"); help.classList.remove("open"); notes.classList.remove("open"); }
+      else if (e.key === "n" || e.key === "N") { notes.classList.toggle("open"); help.classList.remove("open"); gridview.classList.remove("open"); }
+      else if (e.key === "?" ) { help.classList.toggle("open"); }
+      else if (e.key === "Escape") closeOverlays();
+    });
+    document.getElementById("deck").addEventListener("click", (e) => {
+      if (e.target.closest("button, a, pre")) return;
+      go(e.clientX < window.innerWidth / 2 ? -1 : 1);
+    });
+    document.querySelectorAll(".copy").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const text = btn.parentElement.innerText.replace(/^복사\n?/, "");
+        await navigator.clipboard.writeText(text.trim());
+        btn.textContent = "복사됨";
+        setTimeout(() => { btn.textContent = "복사"; }, 1200);
+      });
+    });
+    show();
+  </script>
+</body>
+</html>

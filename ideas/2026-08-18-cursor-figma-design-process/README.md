@@ -12,5 +12,12 @@
 | --- | --- |
 | [deck.html](deck.html) | 팀 PT용 슬라이드. 브라우저에서 연다 |
 | [prompts.md](prompts.md) | 단계별 Cursor 프롬프트 치트시트 |
+| [Skill](../../.cursor/skills/service-design-figma/SKILL.md) | Cursor가 이 프로세스를 실행할 때 읽는 스킬 |
 
 조작: `←` `→` 또는 스페이스, `G` 전체 보기, `N` 발표 메모, `?` 도움말.
+
+## Skill
+
+에이전트 실행 본문은 `.cursor/skills/service-design-figma/` 다. 채팅에서 서비스를 개요부터 Figma로 그리라고 하면 이 스킬을 따른다.
+
+예: `service-design-figma로 ○○ 서비스 P0부터 G1까지`.

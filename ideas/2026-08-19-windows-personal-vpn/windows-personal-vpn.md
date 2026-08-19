@@ -119,6 +119,8 @@ Server와 Bridge를 같은 PC에 같이 올리지 않는다. Bridge는 Server에
 장점: 폰·맥에 내장 VPN(SSTP, L2TP)으로도 붙을 수 있어, 상대 기기에 SoftEther 클라이언트가 없어도 되는 경우가 있다.  
 단점: 인바운드 포트를 연다. 소프트웨어와 사용자 계정을 직접 패치·관리한다. 유저모드 SecureNAT는 속도가 기대보다 낮을 수 있다.
 
+모바일: 공식 SoftEther 앱은 없다. [OpenVPN Connect 또는 iOS L2TP](softether-mobile.md).
+
 ## 경로 3 — WireGuard를 Windows에서 서버처럼
 
 공식 WireGuard for Windows는 터널 엔진이지, “서버 마법사”가 아니다. 서버처럼 쓰려면 피어 키, ListenPort, NAT, 포워딩을 직접 맞춘다. 그걸 GUI로 줄인 것이 [Wg Server for Windows](https://github.com/micahmo/WgServerforWindows), [EasyWG Server](https://github.com/tailin/easy-wireguard-server) 같은 도구다.

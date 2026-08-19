@@ -13,9 +13,6 @@
 | [deck.html](deck.html) | 팀 PT용 슬라이드. 브라우저에서 연다 |
 | [prompts.md](prompts.md) | 단계별 Cursor 프롬프트 치트시트 |
 | [Skill](../../.cursor/skills/service-design-figma/SKILL.md) | Cursor가 이 프로세스를 실행할 때 읽는 스킬 |
-| [compare-claude-design.md](compare-claude-design.md) | Cursor+Figma MCP와 Claude Design을 역할별로 비교 |
-
-조작: `←` `→` 또는 스페이스, `G` 전체 보기, `N` 발표 메모, `?` 도움말.
 
 조작: `←` `→` 또는 스페이스, `G` 전체 보기, `N` 발표 메모, `?` 도움말.
 

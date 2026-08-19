@@ -55,6 +55,8 @@ Virtual Hub 목록에 허브가 하나 있고 Online이면 Easy Setup은 끝난 
 5. **OpenVPN / MS-SSTP Setting** → **Enable OpenVPN Clone Server Function**. **Generate a Sample Configuration File for OpenVPN Clients**. zip 안의 `*_openvpn_remote_access_l3.ovpn`만 쓴다.
 6. 창 아래 **Dynamic DNS** 이름(예: `vpn….softether.net`)을 `.ovpn`의 `remote`에 넣는다. 포트는 본창 리스너에 이미 있는 **443**이 카페망에 유리하다. `proto tcp`로 맞춘다.
 
+그 이름은 직접 신청하는 도메인이 아니다. SoftEther가 이 Server에 붙여 주는 주소다. **Manage VPN Server 'localhost'** 본창 **맨 아래 상태줄**에 `vpn숫자.softether.net`으로 보인다. 같은 창의 **Dynamic DNS Setting**을 열면 전체 이름을 복사할 수 있다. 집 공인 IP가 바뀌어도 이 이름이 따라가므로 `.ovpn`에는 IP보다 이 이름을 넣는 편이 낫다. 공유기 포트포워딩이 안 되는 CGNAT면 이 이름이 있어도 밖에서 안 들어온다.
+
 리스너에 443, 992, 1194, 5555가 Listening이면 Server 쪽 포트는 열린 것이다. 밖에서 들어오려면 공유기에서 그 TCP를 이 PC로 넘기는 일이 남는다.
 
 ## 3. Easy Setup (원격 액세스)

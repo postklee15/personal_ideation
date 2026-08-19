@@ -94,11 +94,12 @@ Windows에서 빠지기 쉬운 점:
 
 Windows에서 가장 완성도에 가까운 **전통적 VPN 서버**다. 가상 허브, 사용자 계정, SSTP·L2TP/IPsec·OpenVPN 호환·자체 SSL-VPN을 한 프로세스에서 연다. 관리 GUI가 Windows에 있다.
 
-다운로드는 **VPN Server**다. **VPN Bridge는 받지 않는다.**
+다운로드는 **VPN Server**다. **VPN Bridge는 받지 않는다.** Windows용 Server 설치본에 **Server Manager가 같이 들어 있다.** 집 PC에 Server와 Server Manager를 따로 받아 두 번 설치할 필요는 없다.
 
 | 패키지 | 이 구성에서 |
 | --- | --- |
-| VPN Server | 집 Windows 11 Pro에 설치. 밖에서 들어오는 쪽 |
+| VPN Server (Windows) | 집 Windows 11 Pro에 이것만 설치. Manager·vpncmd가 포함된다 |
+| VPN Server Manager 단독 | 다른 Windows에서 원격 관리할 때만. 집 서버 PC에는 불필요 |
 | VPN Client | 밖에서 붙는 PC에만. 폰·맥은 내장 SSTP/L2TP나 OpenVPN으로 대체 가능 |
 | VPN Bridge | 지점 LAN을 본사 서버에 상시로 잇는 사이트 간용. 개인 원격접속에는 없음 |
 | Server 안의 Local Bridge | Server 설정 항목이다. Bridge 설치 파일이 아니다. 집 LAN에 이더넷처럼 붙일 때 Server에서 켠다 |

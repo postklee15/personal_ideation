@@ -40,7 +40,22 @@
 
 OK 후 Connect한다. 암호가 없다는 안내가 나오면 **지금** 관리자 암호를 정한다. 허브 사용자 암호와 다른 긴 암호로 둔다. 이 암호는 Server Manager 접속용이다. 여기서 미리 아무 암호나 넣으면 접속이 거절된다.
 
-허브가 없으면 Easy Setup 창이 뜬다.
+허브가 없으면 Easy Setup 창이 뜬다. 이미 **Manage VPN Server 'localhost'** 본창이 보이면 아래 4장을 따른다.
+
+## 2.1 본창에서 할 일 (허브가 이미 있을 때)
+
+Virtual Hub 목록에 허브가 하나 있고 Online이면 Easy Setup은 끝난 상태다. 예: 허브 이름 `seven_vpn`, 사용자 0명.
+
+이 창의 버튼은 다음 순서로만 쓴다. Encryption and Network, Edit Config, IPsec / L2TP, VPN Azure, Local Bridge는 지금은 열지 않는다.
+
+1. 허브를 클릭한 뒤 **Manage Virtual Hub**.
+2. **Manage Users**에서 본인 계정 하나. 인증은 비밀번호. 익명 없음. OpenVPN 로그인 이름은 `계정@허브이름` (예: `나@seven_vpn`).
+3. 같은 허브 창에서 **Virtual NAT and Virtual DHCP Server (SecureNAT)** → **Enable SecureNAT**. 밖에서 집 인터넷으로 나가려면 이 스위치가 필요하다. Local Bridge와 같이 켜지 않는다.
+4. 허브 창을 닫고 본창으로 돌아온다.
+5. **OpenVPN / MS-SSTP Setting** → **Enable OpenVPN Clone Server Function**. **Generate a Sample Configuration File for OpenVPN Clients**. zip 안의 `*_openvpn_remote_access_l3.ovpn`만 쓴다.
+6. 창 아래 **Dynamic DNS** 이름(예: `vpn….softether.net`)을 `.ovpn`의 `remote`에 넣는다. 포트는 본창 리스너에 이미 있는 **443**이 카페망에 유리하다. `proto tcp`로 맞춘다.
+
+리스너에 443, 992, 1194, 5555가 Listening이면 Server 쪽 포트는 열린 것이다. 밖에서 들어오려면 공유기에서 그 TCP를 이 PC로 넘기는 일이 남는다.
 
 ## 3. Easy Setup (원격 액세스)
 

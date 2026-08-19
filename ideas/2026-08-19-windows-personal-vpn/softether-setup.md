@@ -121,3 +121,20 @@ RDP(3389)나 SMB를 인터넷에 같이 열지 않는다. VPN이 붙은 뒤에�
 | 카페에서만 안 됨 | UDP 차단 → `proto tcp` + 443 |
 
 같은 PC에서 Server와 Bridge를 같이 올리지 않는다. 관리 창은 설치된 Server Manager로 `localhost`만 쓰면 된다.
+
+## 9. Chrome 원격 데스크톱이랑 같이 쓸 때
+
+**VPN Server만 켜 두는 것**과 **그 PC가 VPN 클라이언트로 붙는 것**은 다르다.
+
+Chrome 원격 데스크톱·AnyDesk·TeamViewer는 보통 이 PC가 Google 등으로 **밖으로 나가는** 연결이다. SoftEther Server는 밖에서 **들어오는** 리스너다. 집 PC를 서버로만 두고, 그 PC에는 OpenVPN/SoftEther 클라이언트를 켜지 않으면 원격 프로그램은 대체로 그대로 된다. 공유기에서 443을 SoftEther로 넘기는 것은 인바운드라, Chrome이 쓰는 아웃바운드 HTTPS를 빼앗지 않는다.
+
+끊길 수 있는 경우는 이쪽이다.
+
+| 상황 | 결과 |
+| --- | --- |
+| 서버 PC에서 OpenVPN·상용 VPN을 전체 터널로 켬 | 기본 경로가 바뀌어 원격 호스트가 Google에 못 가거나 세션이 떨어질 수 있다 |
+| Local Bridge를 실제 NIC에 걸어 어댑터가 출렁임 | 원격 호스트가 네트워크 변경으로 재연결한다 |
+| IPsec/L2TP를 켜 Windows 쪽 IPsec과 겹침 | 드물지만 다른 VPN·원격이 이상해질 수 있다. OpenVPN만 쓸 때는 꺼 둔다 |
+| 밖에서 RDP(3389)를 직접 연 상태 | VPN과 무관하게 위험하다. 원격은 Chrome/AnyDesk처럼 아웃바운드 중계이거나, VPN 붙은 뒤 LAN으로만 |
+
+폰에서 VPN을 켠 채로 Chrome 원격 데스크톱을 쓰면, 폰의 CRD 트래픽이 집을 거쳐 Google로 나간다. 집 서버가 켜져 있는 한 동작은 가능하다. 화면만 필요하면 VPN 없이 CRD만으로도 된다. VPN은 집 NAS·집 IP로 웹을 쓰는 용도다.

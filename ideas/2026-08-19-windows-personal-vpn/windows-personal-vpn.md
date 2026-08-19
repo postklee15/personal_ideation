@@ -94,6 +94,17 @@ Windows에서 빠지기 쉬운 점:
 
 Windows에서 가장 완성도에 가까운 **전통적 VPN 서버**다. 가상 허브, 사용자 계정, SSTP·L2TP/IPsec·OpenVPN 호환·자체 SSL-VPN을 한 프로세스에서 연다. 관리 GUI가 Windows에 있다.
 
+다운로드는 **VPN Server**다. **VPN Bridge는 받지 않는다.**
+
+| 패키지 | 이 구성에서 |
+| --- | --- |
+| VPN Server | 집 Windows 11 Pro에 설치. 밖에서 들어오는 쪽 |
+| VPN Client | 밖에서 붙는 PC에만. 폰·맥은 내장 SSTP/L2TP나 OpenVPN으로 대체 가능 |
+| VPN Bridge | 지점 LAN을 본사 서버에 상시로 잇는 사이트 간용. 개인 원격접속에는 없음 |
+| Server 안의 Local Bridge | Server 설정 항목이다. Bridge 설치 파일이 아니다. 집 LAN에 이더넷처럼 붙일 때 Server에서 켠다 |
+
+Server와 Bridge를 같은 PC에 같이 올리지 않는다. Bridge는 Server에서 가상 허브·클라이언트 수신을 뺀 축소판이라, 집 진입점으로는 Server가 맞다.
+
 밖에서 인터넷까지 집 회선으로 내보내려면 SecureNAT(가상 NAT/DHCP)를 쓴다. 집 LAN에 브리지하려면 Local Bridge를 쓴다. 둘을 동시에 어설프게 켜면 DHCP가 충돌할 수 있다. 목적 하나를 고른다.
 
 전제:

@@ -9,9 +9,9 @@
 #let card = rgb("#f4f1ea")
 
 #set document(
-  title: "미국 30년물 금리와 AI 자본 전쟁",
+  title: "미국 30년물 금리와 AI 자본 전쟁 — 합본",
   author: "시장 브리핑",
-  keywords: ("Treasury", "30Y", "AI", "duration", "mortgage"),
+  keywords: ("Treasury", "30Y", "AI", "duration", "mortgage", "household", "Bitcoin"),
   date: datetime(year: 2026, month: 8, day: 18),
 )
 
@@ -33,22 +33,24 @@
 #set heading(numbering: "1.")
 #show heading: set text(font: "Noto Sans KR", fill: navy)
 #show heading.where(level: 1): it => {
-  pagebreak(weak: true)
-  v(2mm)
-  block(below: 4mm)[
-    #set text(size: 15pt, weight: 700, fill: navy)
-    #block(
-      width: 100%,
-      inset: (bottom: 3mm),
-      stroke: (bottom: 1.6pt + navy),
-    )[
-      #if it.numbering != none [
+  if it.numbering == none {
+    none
+  } else {
+    pagebreak(weak: true)
+    v(2mm)
+    block(below: 4mm)[
+      #set text(size: 15pt, weight: 700, fill: navy)
+      #block(
+        width: 100%,
+        inset: (bottom: 3mm),
+        stroke: (bottom: 1.6pt + navy),
+      )[
         #counter(heading).display()
         #h(2mm)
+        #it.body
       ]
-      #it.body
     ]
-  ]
+  }
 }
 #show heading.where(level: 2): it => {
   v(3mm)
@@ -96,13 +98,12 @@
   #align(center)[
     #text(size: 8pt, fill: muted, weight: 700)[#label]
     #v(2pt)
-    #text(size: 14pt, fill: navy, weight: 700)[#value]
+    #text(size: 13pt, fill: navy, weight: 700)[#value]
     #v(1pt)
     #text(size: 7.5pt, fill: muted)[#note]
   ]
 ]
 
-#let th-fill = navy
 #show table.cell.where(y: 0): set text(fill: white, weight: 700, size: 8.5pt)
 #set table(
   stroke: 0.4pt + line-c,
@@ -121,7 +122,7 @@
     block(width: 100%)[
       #line(length: 100%, stroke: 0.45pt + line-c)
       #v(3pt)
-      미국 30년물 금리와 AI 자본 전쟁  ·  2026.08.18
+      미국 30년물 금리와 AI 자본 전쟁 합본  ·  2026.08.18
       #h(1fr)
       #counter(page).display("1")
     ]
@@ -130,33 +131,53 @@
 
 #set page(footer: footer-content)
 
+#let part-page(kicker-text, title, subtitle) = {
+  pagebreak(weak: false)
+  counter(heading).update(0)
+  block(width: 100%, height: 100% - 40pt)[
+    #v(1fr)
+    #kicker(kicker-text)
+    #v(8mm)
+    #text(size: 26pt, weight: 700, fill: navy, tracking: -0.4pt)[#title]
+    #v(5mm)
+    #block(width: 52mm, height: 3.2pt, fill: amber)
+    #v(7mm)
+    #text(size: 12pt, fill: slate)[#subtitle]
+    #v(1fr)
+  ]
+}
+
 // ===================== 표지 =====================
 #block(width: 100%, height: 100% - 0pt)[
-  #v(18mm)
-  #kicker[MARKET BRIEFING  ·  2026.08.18]
+  #v(14mm)
+  #kicker[COMBINED BRIEFING  ·  2026.08.18]
   #v(6mm)
-  #text(size: 28pt, weight: 700, fill: navy, tracking: -0.4pt)[
+  #text(size: 26pt, weight: 700, fill: navy, tracking: -0.4pt)[
     미국 30년물 금리와\
     AI 자본 전쟁
   ]
+  #v(3mm)
+  #text(size: 13pt, weight: 700, fill: amber)[합본]
   #v(5mm)
   #block(width: 52mm, height: 3.2pt, fill: amber)
   #v(7mm)
-  #text(size: 12.5pt, fill: slate)[
-    연준이 아니라 장기 자본 수급이 만드는 고금리 국면.\
-    듀레이션, 빅테크 발행, 지정학, 주택 모기지까지.
+  #text(size: 12pt, fill: slate)[
+    브리핑부터 후속 논의, 가상화폐 렌즈, 개인 대응까지 한 권으로 묶었다.\
+    연준이 아니라 장기 자본 수급이 만드는 고금리 국면.
   ]
-  #v(10mm)
+  #v(7mm)
 
   #grid(
-    columns: (1fr, 1fr, 1fr),
+    columns: (1fr, 1fr),
+    rows: (auto, auto),
     gutter: 6pt,
-    metric([30년 국채], [5.31%], [2007년 6월 이후 최고]),
-    metric([30년 입찰], [5.216%], [2001년 이후 최고 낙찰금리]),
-    metric([30년 모기지], [6.73%], [국채 상승이 주담대로 전달]),
+    metric([제1부], [브리핑], [구조와 듀레이션]),
+    metric([제2부], [후속 논의], [누가 먼저 항복하는가]),
+    metric([제3부], [가상화폐], [생산성 없는 자산의 시간]),
+    metric([제4부], [개인 대응], [가계 부채와 두 질문]),
   )
 
-  #v(10mm)
+  #v(8mm)
   #block(
     width: 100%,
     fill: white,
@@ -164,9 +185,9 @@
     radius: 3pt,
     inset: 12pt,
   )[
-    #text(weight: 700, fill: navy, size: 10pt)[한 줄 결론]
+    #text(weight: 700, fill: navy, size: 10pt)[한 줄]
     #v(3pt)
-    지금 미국 장기금리는 기준금리 경로가 아니라, AI가 자본을 놓고 미국 정부와 경쟁하면서 장기 돈의 가격이 다시 매겨지는 국면이다. 시장을 가르는 질문은 “AI인가 아닌가”가 아니라 *이 자산의 듀레이션이 얼마나 긴가*이다.
+    지금 미국 장기금리는 기준금리 경로가 아니라, AI가 자본을 놓고 미국 정부와 경쟁하면서 장기 돈의 가격이 다시 매겨지는 국면이다. 네러티브는 분자를 바꾸고, 금리는 분모를 바꾼다. 시장을 가르는 질문은 “AI인가 아닌가”가 아니라 *이 자산의 듀레이션이 얼마나 긴가*이다.
   ]
 
   #v(1fr)
@@ -176,8 +197,8 @@
     columns: (1fr, 1fr),
     text(size: 8.5pt, fill: muted)[
       작성 기준일  2026년 8월 18일\
-      성격  내부 브리핑 / 시장 노트\
-      원천  시장 코멘트 및 공개 시세·입찰·주택 지표
+      구성  브리핑 · 후속 논의 · 가상화폐 · 개인 대응\
+      성격  내부 브리핑 / 시장 노트
     ],
     align(right)[
       #text(size: 8.5pt, fill: muted)[
@@ -190,7 +211,6 @@
 
 #pagebreak()
 
-// ===================== 목차 =====================
 #heading(level: 1, numbering: none, outlined: false)[목차]
 #v(1mm)
 #set text(size: 10pt)
@@ -199,6 +219,34 @@
 #outline(title: none, indent: 1.1em, depth: 2)
 #set text(size: 10pt)
 
-#pagebreak()
-
+#part-page(
+  [PART I  ·  MARKET BRIEFING],
+  [제1부  브리핑],
+  [미국 30년물 금리와 AI 자본 전쟁.\ 연준이 아닌 장기 수급, 듀레이션, 지정학, 주택까지.],
+)
+#heading(level: 1, numbering: none)[제1부  브리핑]
 #include "parts/briefing-body.typ"
+
+#part-page(
+  [PART II  ·  DISCUSSION],
+  [제2부  후속 논의],
+  [누가 먼저 항복하는가.\ 일본 국채·엔캐리, 전이는 레벨이 아니라 기능.],
+)
+#heading(level: 1, numbering: none)[제2부  후속 논의]
+#include "parts/discussion-body.typ"
+
+#part-page(
+  [PART III  ·  CRYPTO LENS],
+  [제3부  가상화폐 렌즈],
+  [생산성 없는 자산의 시간.\ 제로 캐시플로, 실질금리, 스테이블·채굴 층의 갈림.],
+)
+#heading(level: 1, numbering: none)[제3부  가상화폐 렌즈]
+#include "parts/crypto-body.typ"
+
+#part-page(
+  [PART IV  ·  HOUSEHOLD PLAYBOOK],
+  [제4부  개인투자자 대응 틀],
+  [종목보다 듀레이션.\ 가계 부채와 두 질문으로 대응의 순서를 정한다.],
+)
+#heading(level: 1, numbering: none)[제4부  개인투자자 대응 틀]
+#include "parts/playbook-body.typ"

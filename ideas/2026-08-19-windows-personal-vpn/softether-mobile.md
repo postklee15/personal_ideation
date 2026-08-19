@@ -4,7 +4,7 @@ iPhone·Android에는 **공식 SoftEther VPN Client 앱이 없다.** 스토어�
 
 개인 원격접속 기준 추천은 OpenVPN이다. L2TP/IPsec은 iOS에는 아직 있고, 최근 Android는 제조사가 빼 둔 경우가 많다.
 
-## 서버에서 먼저
+자세한 설치·OpenVPN 순서는 [softether-setup.md](softether-setup.md).
 
 Server Manager로 `localhost`에 붙인 다음이다.
 

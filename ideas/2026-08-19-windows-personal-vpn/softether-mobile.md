@@ -6,6 +6,8 @@ iPhone·Android에는 **공식 SoftEther VPN Client 앱이 없다.** 스토어�
 
 자세한 설치·OpenVPN 순서는 [softether-setup.md](softether-setup.md).
 
+## 서버에서 먼저
+
 Server Manager로 `localhost`에 붙인 다음이다.
 
 1. 가상 허브에 **본인 전용 사용자**를 만든다. 익명·게스트는 켜지 않는다.

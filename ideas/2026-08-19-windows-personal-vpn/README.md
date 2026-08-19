@@ -12,4 +12,4 @@
 
 개인 한 대로 밖에서 붙는 용도면 **소프트웨어 구독료는 안 내도 된다.** Tailscale Personal, SoftEther, WireGuard 모두 무료다. SoftEther는 Windows용 **VPN Server**만 받는다. Server Manager는 그 설치본에 들어 있고, VPN Bridge는 사이트 간용이라 필요 없다. 24시간 전기, 통신사 공인 IP, 싼 VPS 중계만 유료 후보다.
 
-본문: [windows-personal-vpn.md](windows-personal-vpn.md)
+본문: [windows-personal-vpn.md](windows-personal-vpn.md). 모바일: [softether-mobile.md](softether-mobile.md) (공식 앱 없음, OpenVPN Connect 또는 iOS L2TP).

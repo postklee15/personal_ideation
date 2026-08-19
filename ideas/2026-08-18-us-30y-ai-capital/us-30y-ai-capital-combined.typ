@@ -230,7 +230,7 @@
 #part-page(
   [PART II  ·  DISCUSSION],
   [제2부  후속 논의],
-  [누가 먼저 항복하는가.\ 일본 국채·엔캐리, 전이는 레벨이 아니라 기능.],
+  [누가 먼저 항복하는가.\ 일본 수요 축, 바이백은 밸브, 연준은 기능에서만.],
 )
 #heading(level: 1, numbering: none)[제2부  후속 논의]
 #include "parts/discussion-body.typ"

@@ -24,6 +24,26 @@
 
 Windows 11 Pro에도 내장 RRAS는 없다. 그건 Windows Server 역할이다. PPTP는 쓰지 않는다. 잠자는 PC는 서버가 아니다.
 
+소프트웨어 구독은 개인 범위에서 다 무료다. 표는 [비용](#비용)에 있다.
+
+## 비용
+
+2026-08 기준. 이미 가진 Windows 11 Pro·집 회선 위에서의 이야기다.
+
+| 항목 | 소프트웨어 가격 | 개인이 돈을 내는 지점 |
+| --- | --- | --- |
+| Tailscale Personal | $0, 기한 없음 | 비영리 개인용. 사용자 최대 6명, 본인 기기는 무제한, tagged resource 50대까지. 상업용·7명부터 유료. [요금표](https://tailscale.com/pricing) |
+| SoftEther VPN Server | $0 (Apache 2.0) | 없음. 공식 배포본만 쓴다 |
+| WireGuard + Wg Server for Windows / EasyWG | $0 | 없음. 공식·GitHub 릴리스만 |
+| Hyper-V + Linux VM + WireGuard | $0 (Pro에 포함된 Hyper-V, 배포판·WireGuard 무료) | 없음 |
+| Headscale (직접 좌표 서버) | $0 | 돌릴 곳이 집 PC면 추가 비용 없음. 공인 IP가 필요하면 VPS 월 과금 |
+| 공인 IPv4가 없을 때 VPS 중계 | VPS만 유료 | 월 수천 원대 소형 리눅스면 충분. 소프트웨어는 여전히 무료 |
+| DDNS | DuckDNS 등은 $0 | 일부 업체는 유료 호스트명 |
+| 전기 | — | 데스크톱을 24시간 켜 두면 여기가 제일 크다 |
+| 통신사 공인 IP | — | CGNAT 회선에 공인 IP를 신청하면 약정·월정액이 붙는 경우가 있다 |
+
+Nord·Express 같은 **상용 VPN 구독은 이 구성에 필요 없다.** 그건 다른 나라 출구를 사는 상품이다. 집 Windows를 서버로 쓰는 경로와는 계산이 다르다.
+
 ## Windows 11 Pro에서 달라지는 점
 
 Pro는 “서버 OS”가 아니다. Home 대비 **이 PC에서 게이트웨이를 만들기 쉬운 쪽**이 열린다.
@@ -65,7 +85,7 @@ Windows에서 빠지기 쉬운 점:
 - 트레이에서 **unattended / 로그인 없이 실행**을 켠다. 기본값은 로그온 세션에 묶인다.
 - 절전을 끈다. 잠든 exit node는 경로가 아니다.
 - 관리 콘솔에서 exit node·서브넷 광고를 **승인**해야 한다. 앱만 설치하면 안 열린다.
-- 개인 무료 범위는 계정·기기 수 제한이 있다. 혼자·가족 소수는 보통 충분하다.
+- 개인 용도면 [Personal 플랜](https://tailscale.com/pricing)이 $0다. 사용자 6명·본인 기기 무제한. 상업용이거나 7명부터 유료다.
 - 데이터는 기기 사이 WireGuard로 암호화된다. 좌표 서버는 누가 누구인지 같은 제어 평면을 본다. 제어 평면까지 직접 쥐려면 Headscale을 별도 호스트에 둔다. Headscale을 집 Windows에 얹는 것은 이 문서의 1순위가 아니다.
 
 외부 기기에도 같은 앱을 깐다. 표준 VPN 클라이언트(내장 IKEv2, 아무 OpenVPN 앱)만으로 붙는 구조가 아니다.

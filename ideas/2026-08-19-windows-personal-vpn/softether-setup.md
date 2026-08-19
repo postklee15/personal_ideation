@@ -25,9 +25,20 @@
 
 ## 2. 처음 접속과 관리 암호
 
-1. **SoftEther VPN Server Manager**를 연다.
-2. `localhost (This server)`를 고르고 **Connect**한다. 목록이 비어 있으면 새 연결을 만들고 호스트는 `localhost`, 포트는 기본값이다.
-3. 관리자 암호를 처음 정한다. 허브 사용자 암호와 다른, 긴 암호로 둔다. 이 암호는 Server Manager 접속용이다.
+목록이 비어 있으면 **New Connection Setting**이 뜬다. 이 창은 폰 VPN이 아니다. Manager가 **같은 PC의 Server 서비스**에 관리용으로 붙는 설정이다.
+
+| 칸 | 값 |
+| --- | --- |
+| Setting Name | `localhost` 또는 `Home` |
+| Connect to Localhost | **켠다.** Host Name이 `localhost`로 채워지고 OK가 살아난다 |
+| Host Name | localhost가 자동으로 들어가면 그대로 |
+| Port Number | **443** (TCP). 기본 리스너다 |
+| Proxy | **Direct TCP/IP Connection (No Proxy)** |
+| Administration Mode | **Server Admin Mode** |
+| Password | **지금은 비운다.** 갓 설치한 Server는 관리 암호가 없다 |
+| Do not Save Admin's Password | 원하면 켠다 |
+
+OK 후 Connect한다. 암호가 없다는 안내가 나오면 **지금** 관리자 암호를 정한다. 허브 사용자 암호와 다른 긴 암호로 둔다. 이 암호는 Server Manager 접속용이다. 여기서 미리 아무 암호나 넣으면 접속이 거절된다.
 
 허브가 없으면 Easy Setup 창이 뜬다.
 

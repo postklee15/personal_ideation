@@ -784,6 +784,112 @@ generate_diagram으로 FigJam에 그려.
         </div>
       </section>
 
+      <section class="slide" data-notes="둘은 경쟁자가 아니라 SoR이 다르다. Figma는 스펙, Claude Design은 탐색과 클릭 프로토.">
+        <p class="kicker">Compare</p>
+        <h2>Claude Design과 자리가 다르다</h2>
+        <div class="row two">
+          <div class="card teal">
+            <h3>Cursor + Figma MCP</h3>
+            <p>진실의 원천은 Figma 파일. 개요→IA→회색 와이어→토큰→인스턴스. G1 전에 색을 넣지 않는다.</p>
+          </div>
+          <div class="card blue">
+            <h3>Claude Design</h3>
+            <p>설명하면 초안이 나온다. 대화·슬라이더·직접 편집. 산출물은 프로토·덱·HTML이고 Claude Code로 넘긴다.</p>
+          </div>
+        </div>
+        <p class="muted small" style="margin-top:16px">Claude Design 커넥터는 Adobe, Canva, Miro, Lovable, Vercel 등. Figma는 그 목록에 없다. Figma로 심는 작업은 우리 프로세스가 맡는다.</p>
+      </section>
+
+      <section class="slide" data-notes="디자이너 슬라이드. 탐색은 Claude, 확정은 Figma.">
+        <p class="kicker">Designer</p>
+        <h2>디자이너</h2>
+        <div class="row two">
+          <div class="card ok">
+            <h3>Figma MCP가 앞설 때</h3>
+            <ul class="small">
+              <li>변수·모드·컴포넌트가 팀 파일에 남는다</li>
+              <li>기존 리뷰, 라이브러리, Dev Mode</li>
+              <li>예쁜 오답을 G1이 늦춘다</li>
+            </ul>
+          </div>
+          <div class="card warn">
+            <h3>부담</h3>
+            <ul class="small">
+              <li>방향 12개를 뽑는 속도는 느리다</li>
+              <li>Agent 트리는 스크린샷 보정이 필요하다</li>
+              <li>클릭감은 P7 전엔 약하다</li>
+            </ul>
+          </div>
+          <div class="card ok">
+            <h3>Claude Design이 앞설 때</h3>
+            <ul class="small">
+              <li>방향 탐색, 브랜드 초안</li>
+              <li>공유용 인터랙티브 프로토 (PR 없이)</li>
+              <li>덱·마케팅 에셋까지 한곳</li>
+            </ul>
+          </div>
+          <div class="card warn">
+            <h3>부담</h3>
+            <ul class="small">
+              <li>Figma 라이브 인스턴스가 아니다</li>
+              <li>확정 후 Figma에 다시 심는 비용</li>
+              <li>멀티플레이어·버전은 Figma가 강하다</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-notes="기획. 데모와 게이트를 섞지 말 것.">
+        <p class="kicker">PM</p>
+        <h2>기획자</h2>
+        <div class="row two">
+          <div class="card">
+            <h3>Cursor + Figma MCP</h3>
+            <p class="small">장점: brief, 화면 표, Empty/Error, G1, FigJam. 이해관계자가 이미 Figma를 본다.</p>
+            <p class="small muted" style="margin-top:8px">단점: 회의 중 클릭 데모까지 멀다. MCP 규약이 있다. 그레이 와이어는 ‘덜 된 것’으로 보일 수 있다.</p>
+          </div>
+          <div class="card">
+            <h3>Claude Design</h3>
+            <p class="small">장점: 그 자리 데모, 조직 링크, 덱. Figma를 못 다뤄도 시나리오를 보여줄 수 있다.</p>
+            <p class="small muted" style="margin-top:8px">단점: 예쁜 초안이 결정처럼 보인다. 상태·우선순위 표는 안 생긴다. G1을 건너뛰기 쉽다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-notes="개발. SoR을 하나만 고르라고 강조.">
+        <p class="kicker">Eng</p>
+        <h2>개발자</h2>
+        <div class="row two">
+          <div class="card">
+            <h3>Cursor + Figma MCP</h3>
+            <p class="small">장점: Figma 스펙, Code Connect, 토큰 모드, 네이티브 앱, Cursor 한 환경.</p>
+            <p class="small muted" style="margin-top:8px">단점: 디자인이 코드가 아니다. 더러운 노드 트리, 인터랙션 검증은 별도.</p>
+          </div>
+          <div class="card">
+            <h3>Claude Design</h3>
+            <p class="small">장점: 프로토가 이미 돌아간다. Claude Code가 스크린샷부터 시작하지 않는다. 스파이크가 짧다.</p>
+            <p class="small muted" style="margin-top:8px">단점: 프로토 코드 ≠ 제품 레포일 수 있다. 토큰이 세 곳에 생긴다. 한도를 채팅·코드와 나눈다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-notes="실무 결합 5단계. 파일럿에 이 순서를 제안.">
+        <p class="kicker">Together</p>
+        <h2>같이 쓰는 순서</h2>
+        <div class="row" style="grid-template-columns: 1fr;">
+          <div class="card">
+            <ol class="small" style="margin:0; padding-left:1.2em;">
+              <li>기획이 시나리오를 적는다 (P1, 도구 무관).</li>
+              <li>방향이 여러 개면 Claude Design에서 2~3안을 클릭해 본다.</li>
+              <li>고른 안을 레퍼런스로 Cursor Skill P2–G1에 넣는다. 와이어는 회색.</li>
+              <li>G1 뒤 Figma에 토큰·컴포넌트·하이파이.</li>
+              <li>제품 구현의 SoR은 하나. 웹 스파이크는 Claude Design, 장기 스펙은 Figma.</li>
+            </ol>
+          </div>
+        </div>
+        <p class="muted small" style="margin-top:16px">자세한 표는 <code>compare-claude-design.md</code>.</p>
+      </section>
+
       <section class="slide center" data-notes="Q&A. 파일럿 서비스와 리뷰어를 정하고 끝낸다.">
         <p class="kicker">Next</p>
         <h1>파일럿 하나부터</h1>

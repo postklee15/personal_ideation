@@ -1,6 +1,6 @@
 # 밖에서 붙는 Windows VPN 서버
 
-밖에서 노트북·휴대폰으로 연결해, 집 Windows PC를 통해 집 안 기기나 집 인터넷으로 나가는 구성이다. Windows 설정 앱의 VPN 화면으로는 이 서버를 만들 수 없다. 그건 이미 있는 서버에 **접속하는 클라이언트**다.
+전제는 **Windows 11 Pro** 한 대다. 밖에서 노트북·휴대폰으로 연결해, 이 PC를 통해 집 안 기기나 집 인터넷으로 나가는 구성이다. 설정 앱의 VPN 화면으로는 이 서버를 만들 수 없다. 그건 이미 있는 서버에 **접속하는 클라이언트**다.
 
 임의의 상용 VPN 설치파일(Nord, Express 등)을 깔아도 내 PC가 서버가 되지는 않는다. 그런 제품은 클라우드 쪽에 서버가 있고, Windows에는 클라이언트만 온다. 집 PC를 진입점으로 쓰려면 **서버 역할을 하는 소프트웨어**를 고른다.
 
@@ -20,9 +20,28 @@
 
 1. **Tailscale exit node** — 공인 IP·포트포워딩 없이 밖에서 붙고, 원하면 집 회선으로 인터넷을 내보낸다. Windows에 공식 앱이 있다.
 2. **SoftEther VPN Server** — Windows에 전통적인 VPN 서버를 직접 올리고 싶을 때. 공인 IPv4와 포트포워딩이 필요하다.
-3. **WireGuard + 윈도우 서버 GUI** — 프로토콜은 가볍지만, Windows에서 NAT·포워딩을 직접 맞춰야 해서 손이 더 간다.
+3. **WireGuard + 윈도우 서버 GUI** — Pro라서 `New-NetNat`/Hyper-V 경로가 Home보다 열려 있다. 그래도 NAT·포워딩은 직접 맞춘다.
 
-Windows Home에 내장 RRAS 서버는 없다. PPTP는 쓰지 않는다. 잠자는 PC는 서버가 아니다.
+Windows 11 Pro에도 내장 RRAS는 없다. 그건 Windows Server 역할이다. PPTP는 쓰지 않는다. 잠자는 PC는 서버가 아니다.
+
+## Windows 11 Pro에서 달라지는 점
+
+Pro는 “서버 OS”가 아니다. Home 대비 **이 PC에서 게이트웨이를 만들기 쉬운 쪽**이 열린다.
+
+| Pro에 있는 것 | VPN 서버와의 관계 |
+| --- | --- |
+| Hyper-V, `New-NetNat` | WireGuard를 전체 터널 게이트웨이로 쓸 때 NAT가 Home보다 잘 붙는다. Wg Server for Windows가 이 경로를 쓴다 |
+| 인터넷 연결 공유(ICS) | Hyper-V NAT가 실패하면 차선. 공유기 DHCP와 싸우지 않게 조심한다 |
+| 원격 데스크톱 호스트 | VPN이 붙은 **뒤**에 집 PC를 조작할 때 쓴다. 인터넷에 RDP(3389)를 직접 열지 않는다 |
+| 로컬 그룹 정책 | 절전 금지, 방화벽, 서비스 자동 기동을 Home보다 단정하게 고정한다 |
+| Hyper-V 가상 머신 | 원하면 작은 Linux VM에 WireGuard를 두고, Windows는 호스트만 한다. 네이티브 Windows NAT보다 라우팅이 예측 가능하다 |
+
+남는 제약:
+
+- 설정 → VPN은 여전히 클라이언트다.
+- 절전·업데이트 재부팅·로그아웃은 Pro도 같다. unattended/서비스 기동을 따로 켠다.
+- Hyper-V 하이퍼바이저를 켜면 일부 게임·안티치트가 까다로워질 수 있다. 이 PC가 게임 본체인지는 경로 3·VM을 고르기 전에 본다.
+- WSL2로 인바운드 VPN 서버를 여는 구성은 포트 포워딩이 지저분하다. Pro에서 Linux 스택이 필요하면 WSL보다 Hyper-V VM이 낫다.
 
 ## 나가기 전에 확인할 것
 
@@ -72,7 +91,7 @@ Windows에서 가장 완성도에 가까운 **전통적 VPN 서버**다. 가상 
 
 공식 WireGuard for Windows는 터널 엔진이지, “서버 마법사”가 아니다. 서버처럼 쓰려면 피어 키, ListenPort, NAT, 포워딩을 직접 맞춘다. 그걸 GUI로 줄인 것이 [Wg Server for Windows](https://github.com/micahmo/WgServerforWindows), [EasyWG Server](https://github.com/tailin/easy-wireguard-server) 같은 도구다.
 
-전제는 SoftEther와 같다. 보통 UDP 51820을 집 PC로 넘긴다. Windows 10/11의 NAT(`New-NetNat`)는 Hyper-V/프로 에디션에 막히기도 하고, 그때는 인터넷 연결 공유(ICS)로 우회한다. Home에서 “아무 설정 없이 게이트웨이”가 되지는 않는다.
+전제는 SoftEther와 같다. 보통 UDP 51820을 집 PC로 넘긴다. Pro에서는 Hyper-V를 켠 뒤 `New-NetNat`으로 NAT를 거는 경로가 열려 있다. 그래도 원클릭 게이트웨이는 아니고, NAT가 실패하면 ICS로 우회한다. Hyper-V를 쓰기 싫거나 게임 본체면 경로 1·2가 덜 아프다.
 
 밖에서 전체 트래픽을 집으로 보내려면 클라이언트 `AllowedIPs`에 기본 경로를 넣고, 서버 쪽에서 NAT가 살아 있어야 한다. DNS도 터널 안에 넣지 않으면 “연결은 됐는데 웹이 안 된다”.
 
@@ -82,8 +101,8 @@ Windows에서 가장 완성도에 가까운 **전통적 VPN 서버**다. 가상 
 
 | 선택 | 이유 |
 | --- | --- |
-| Windows 11 설정 → VPN | 클라이언트 프로필만 만든다 |
-| Windows Home의 RRAS | 서버 역할이 없다. RRAS는 Windows Server 쪽 |
+| Windows 11 설정 → VPN | 클라이언트 프로필만 만든다. Pro도 같다 |
+| Windows 11 Pro의 RRAS | 없다. Remote Access/RRAS는 Windows Server 역할이다 |
 | PPTP | 낡은 프로토콜. 새 배포에 쓰지 않는다 |
 | 웹에서 받은 “무료 VPN 서버” 실행 파일 | 서버가 아니라 백도어인 경우가 많다. 공식 사이트·GitHub 릴리스만 |
 | 상용 VPN 앱을 서버 대용 | 내 PC로 들어오는 리스너가 없다 |
@@ -98,7 +117,8 @@ Windows에서 가장 완성도에 가까운 **전통적 VPN 서버**다. 가상 
 - **빠른 시작 끄기**를 검토한다. 하이브리드 부팅이 서비스를 건너뛰는 경우가 있다.
 - Windows Update 재부팅 후 서버 프로세스가 자동 기동인지 확인.
 - 동적 공인 IP면 DDNS. CGNAT면 DDNS를 붙여도 인바운드는 안 산다.
-- 원격 데스크톱·SMB를 인터넷에 직접 노출하지 않는다. VPN이 붙은 뒤에만 집 주소로 연다.
+- **원격 데스크톱은 VPN 안쪽에서만.** Pro는 RDP 호스트가 켜지므로, 공유기에서 3389를 열지 않는다. 밖에서 화면이 필요하면 터널이 붙은 뒤 LAN 주소로 붙는다.
+- SMB를 인터넷에 직접 노출하지 않는다.
 - 사용자·키는 본인 기기만. 지인에게 “아무나 붙는 VPN”으로 열어 두면 집 회선이 열린 프록시가 된다. ISP 약관·본인 회선 책임 문제가 된다.
 
 ## 무엇을 고를지
@@ -112,16 +132,22 @@ Windows에서 가장 완성도에 가까운 **전통적 VPN 서버**다. 가상 
         ├─ 공인 IPv4가 있고, 표준 VPN 앱으로 붙이고 싶다
         │         → SoftEther (SSTP/443 우선)
         │
-        └─ 공인 IPv4가 있고, WireGuard만 쓰겠다
-                  → Wg Server for Windows / EasyWG
-                    NAT가 안 되면 Linux·공유기 쪽으로 서버를 옮긴다
+        ├─ 공인 IPv4가 있고, WireGuard만 쓰겠다
+        │         → Wg Server for Windows / EasyWG (Pro + Hyper-V NAT)
+        │           게임 본체면 Hyper-V 대신 1·2번
+        │
+        └─ Windows는 켜 두되 서버 스택은 Linux로 분리하고 싶다
+                  → Pro Hyper-V에 작은 Linux VM + WireGuard
+                    공유기 포트는 VM의 고정 LAN IP로
 ```
 
-Windows PC는 가능은 하지만 24시간 게이트웨이로는 공유기(OpenWrt, GL.iNet)나 작은 Linux 상자가 더 덜 아프다. “이미 켜 두는 그 Windows 한 대”에 얹을 이유가 있을 때만 1~3번이 맞다.
+Windows PC는 가능은 하지만 24시간 게이트웨이로는 공유기(OpenWrt, GL.iNet)나 작은 Linux 상자가 더 덜 아프다. “이미 켜 두는 그 Windows 11 Pro 한 대”에 얹을 이유가 있을 때만 위 경로가 맞다.
 
 ## 다음에 정하면 되는 것
+
+OS는 Windows 11 Pro로 고정했다. 남은 것은 회선과 용도다.
 
 1. 공유기 WAN IP와 외부 표시 IP가 같은지
 2. 밖에서 집 LAN이 필요한지, 집 회선 출구만 필요한지
 3. 외부 기기에 Tailscale 앱을 깔 수 있는지, 아니면 내장 VPN 클라이언트만 쓸 것인지
-4. 그 Windows를 절전 없이 둘 수 있는지
+4. 이 PC를 절전 없이 둘 수 있는지, 게임 본체라 Hyper-V를 피해야 하는지

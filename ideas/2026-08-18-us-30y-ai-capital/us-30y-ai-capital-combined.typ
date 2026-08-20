@@ -238,7 +238,7 @@
 #part-page(
   [PART III  ·  CRYPTO LENS],
   [제3부  가상화폐 렌즈],
-  [생산성 없는 자산의 시간.\ 제로 캐시플로, 실질금리, 스테이블·채굴 층의 갈림.],
+  [생산성 없는 자산의 시간.\ 바이백 헤드라인은 분모의 하루, QE가 아니다.],
 )
 #heading(level: 1, numbering: none)[제3부  가상화폐 렌즈]
 #include "parts/crypto-body.typ"

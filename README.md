@@ -8,6 +8,7 @@
 
 | 날짜 | 아이디어 | 상태 |
 | --- | --- | --- |
+| 2026-08-27 | [달러 체제 가정 평가](ideas/2026-08-27-dollar-regime/) | active |
 | 2026-08-18 | [아이데이션 폴더·브랜치 규칙](ideas/2026-08-18-ideation-git-workflow/) | active |
 | 2026-08-18 | [숏츠 반자동화](ideas/2026-08-18-shorts-pipeline/) | draft |
 | 2026-08-18 | [30년물·AI 자본 브리핑](ideas/2026-08-18-us-30y-ai-capital/) | active |

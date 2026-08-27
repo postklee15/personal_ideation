@@ -20,7 +20,7 @@
 | 5-ETH/SOL. AI와 프로그램이 돌리니 안심 | 범주 오류 | 레일은 프로그램이고, 그 위를 흐르는 **화폐는 스테이블 달러**다. 네이티브 토큰이 기축이 아니다 |
 | 5-XRP. 전쟁에도 송금이 안 막힌다 | 정반대 | 리플은 미국 회사이고, 원장은 **제재 동결**을 제품으로 넣는다 |
 
-상세는 `assumption-audit.md`, 열람용 PDF는 `달러_체제_가정_평가.pdf`.
+상세는 `assumption-audit.md`, 열람용 PDF는 `달러_체제_가정_평가.pdf`. 구도 그림은 `dollar-3-diagram.md`.
 
 ## 파일
 
@@ -30,6 +30,10 @@
 - `dollar-3-players.md` — 달러 3.0 선호 플레이어 10
 - `dollar-3-players.typ` — 플레이어 10 PDF 원본
 - `달러_3.0_선호_플레이어_10.pdf` — 열람용 PDF
+- `dollar-3-diagram.md` — 여섯 층 구도
+- `dollar-3-diagram.typ` — 구도 PDF 원본
+- `달러_3.0_구도.pdf` — 열람용 PDF
+- `dollar-3-layers.png` — 포스터
 - `build.sh` — 로컬 재빌드
 
 작성 기준일은 2026년 8월 27일이다.

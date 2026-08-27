@@ -21,3 +21,5 @@ typst compile "${FONT_ARGS[@]}" "$ROOT/dollar-3-players.typ" "$ROOT/달러_3.0_�
 echo "wrote $ROOT/달러_3.0_선호_플레이어_10.pdf"
 typst compile "${FONT_ARGS[@]}" "$ROOT/dollar-3-diagram.typ" "$ROOT/달러_3.0_구도.pdf"
 echo "wrote $ROOT/달러_3.0_구도.pdf"
+typst compile "${FONT_ARGS[@]}" "$ROOT/bills-vs-long-rates.typ" "$ROOT/초단기_국채_수요와_장기_금리.pdf"
+echo "wrote $ROOT/초단기_국채_수요와_장기_금리.pdf"

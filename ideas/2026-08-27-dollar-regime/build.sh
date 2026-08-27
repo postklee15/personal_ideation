@@ -17,3 +17,5 @@ fi
 
 typst compile "${FONT_ARGS[@]}" "$ROOT/dollar-regime-audit.typ" "$ROOT/달러_체제_가정_평가.pdf"
 echo "wrote $ROOT/달러_체제_가정_평가.pdf"
+typst compile "${FONT_ARGS[@]}" "$ROOT/dollar-3-players.typ" "$ROOT/달러_3.0_선호_플레이어_10.pdf"
+echo "wrote $ROOT/달러_3.0_선호_플레이어_10.pdf"

@@ -8,6 +8,7 @@
 
 | 날짜 | 아이디어 | 상태 |
 | --- | --- | --- |
+| 2026-08-31 | [바이낸스 $1000 · 월 30%](ideas/2026-08-31-binance-1000-monthly-30/) | draft |
 | 2026-08-31 | [미국 30년물 6% 시나리오](ideas/2026-08-31-us-30y-six-percent/) | draft |
 | 2026-08-19 | [가이드 문서 관리 페르소나](ideas/2026-08-19-guide-doc-persona/) | draft |
 | 2026-08-18 | [Cursor + Figma 디자인 프로세스](ideas/2026-08-18-cursor-figma-design-process/) | draft |

@@ -230,7 +230,7 @@
 #part-page(
   [PART II  ·  DISCUSSION],
   [제2부  후속 논의],
-  [누가 먼저 항복하는가.\ 일본 수요 축, 바이백은 밸브, 연준은 기능에서만.],
+  [누가 먼저 항복하는가.\ 바이백은 하루짜리 밸브, 남은 손은 대가를 요구한다.],
 )
 #heading(level: 1, numbering: none)[제2부  후속 논의]
 #include "parts/discussion-body.typ"
